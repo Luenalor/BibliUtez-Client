@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BibliUtez</string>
+
+    <string-array name="cantidadLibros">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="clasificacionesLibros">
+        <item>Filosofia y Psicologia</item>
+        <item>Religión</item>
+        <item>Ciencias Sociales</item>
+        <item>Lenguas</item>
+        <item>Ciencias Básicas</item>
+        <item>Tecnología y Ciencias Aplicadas.</item>
+        <item>Artes y recreación.</item>
+        <item>Literatura</item>
+        <item>Historia y Geografía</item>
+    </string-array>
+</resources>
