@@ -116,13 +116,13 @@
                         android:layout_marginLeft="4dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Clasificación:"
+                        android:text="Categoria:"
                         android:textColor="@color/azulTransp"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                 <Spinner
-                        android:id="@+id/spnLibroClasificacion"
+                        android:id="@+id/spnLibroCategoria"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/clasificacionesLibros"
@@ -147,13 +147,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Número de Páginas."
+                        android:hint="Número de Páginas"
                         android:inputType="number"
                         android:textColor="@color/azulUtez"
                         android:textColorHighlight="@color/verdeUtez"
                         android:textColorHint="@color/azulTransp"
                         android:textColorLink="@color/verdeUtez" />
 
+
+                <EditText
+                        android:id="@+id/txtRegistroLibroStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Stock"
+                        android:inputType="number"
+                        android:textColor="@color/azulUtez"
+                        android:textColorHighlight="@color/verdeUtez"
+                        android:textColorHint="@color/azulTransp"
+                        android:textColorLink="@color/verdeUtez" />
 
                 <LinearLayout
                         android:layout_width="match_parent"

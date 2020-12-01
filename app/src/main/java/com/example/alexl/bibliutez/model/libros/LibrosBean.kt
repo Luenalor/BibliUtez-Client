@@ -7,17 +7,16 @@ import java.io.Serializable
 
 class LibrosBean(
 
-    var id: Int,
-    var nombre: String,
+    var id: Int=0,
+    var nombre: String="",
     @SerializedName("editoriales_id")
-    var editorial: String,
+    var editorial: String="",
     @SerializedName("autores_id")
-    var autores: String,
+    var autores: String="",
     @SerializedName("categorias_id")
-    var categoria: CategoriasBean,
-    var precio: Double,
-    var num_pag: Int,
-    var stock: Int
+    var categoria: CategoriasBean = CategoriasBean(),
+    var precio: Double=0.0,
+    var num_pag: Int=0,
+    var stock: Int=0
 
-
-)
+) : Serializable

@@ -55,9 +55,9 @@
                         android:textColor="@color/azulUtez"
                         android:textSize="24sp"
                         android:textStyle="bold"
-                        android:drawableLeft="@drawable/libros2"
+                        android:drawableLeft="@drawable/tinybibli"
 
-                         />
+                        />
 
                 <View
                         android:id="@+id/divider"
@@ -117,13 +117,13 @@
                         android:layout_marginLeft="4dp"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Clasificación:"
+                        android:text="Categoria"
                         android:textColor="@color/azulTransp"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                 <Spinner
-                        android:id="@+id/spnLibroClasificacion"
+                        android:id="@+id/spnLibroCategoria"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/clasificacionesLibros"
@@ -148,13 +148,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Número de Páginas."
+                        android:hint="Número de Páginas"
                         android:inputType="number"
                         android:textColor="@color/azulUtez"
                         android:textColorHighlight="@color/verdeUtez"
                         android:textColorHint="@color/azulTransp"
                         android:textColorLink="@color/verdeUtez" />
 
+
+                <EditText
+                        android:id="@+id/txtModificarLibroStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Stock"
+                        android:inputType="number"
+                        android:textColor="@color/azulUtez"
+                        android:textColorHighlight="@color/verdeUtez"
+                        android:textColorHint="@color/azulTransp"
+                        android:textColorLink="@color/verdeUtez" />
 
                 <LinearLayout
                         android:layout_width="match_parent"
@@ -169,7 +181,7 @@
                             android:layout_weight="1"
                             android:textColor="@color/white"
                             app:backgroundTint="@color/verdeUtez"
-                            android:text="Modificar Libro" />
+                            android:text="Guardar Cambios" />
 
                     <Button
                             android:id="@+id/btnConsultarLibros"

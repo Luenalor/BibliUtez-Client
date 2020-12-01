@@ -41,17 +41,17 @@
                         android:orientation="horizontal">
 
 
-                    <ImageButton
-                            android:id="@+id/imageButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="left"
-                            android:layout_marginLeft="29dp"
-                            android:background="#00FFFFFF"
-                            android:padding="10dp"
-                            app:srcCompat="@drawable/user_verde" />
-
                 </LinearLayout>
+
+                <ImageButton
+                        android:id="@+id/btnClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="29dp"
+                        android:background="#00FFFFFF"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/user_verde" />
 
             </LinearLayout>
         </LinearLayout>
