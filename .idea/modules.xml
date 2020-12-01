@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BibliUtez.iml" filepath="$PROJECT_DIR$/BibliUtez.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BibliUtez.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BibliUtez.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BibliUtez-Client.iml" filepath="$PROJECT_DIR$/BibliUtez-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

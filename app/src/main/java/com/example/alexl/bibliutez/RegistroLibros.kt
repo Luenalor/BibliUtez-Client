@@ -30,7 +30,7 @@ class RegistroLibros : AppCompatActivity() {
             var libroJson = JSONObject()
             libroJson.put("nombre", txtRegistroLibroTitulo.text.toString())
             libroJson.put("editorial", txtRegistroLibroEditorial.text.toString())
-            libroJson.put("categoria", spnLibroCategoria.toString())
+            libroJson.put("nombre", spnLibroCategoria.toString())
             libroJson.put("precio", txtRegistroLibroPrecio.text.toString().toDouble())
             libroJson.put("stock", txtRegistroLibroStock.text.toString().toInt())
             libroJson.put("num_pag", txtRegistroLibroNumPag.text.toString().toInt())

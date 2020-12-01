@@ -25,8 +25,8 @@ class ClienteMenuPrincipal : AppCompatActivity() {
                         libro.autores = objetoLibroJSON.getString("autores_id")
                         libro.stock = objetoLibroJSON.getInt("stock")
                         libro.num_pag = objetoLibroJSON.getInt("num_pag")
-                        libro.categoria.categoria = objetoLibroJSON.getString("categorias_id")
-                        libro.categoria.id = objetoLibroJSON.getInt("id")
+                        libro.nombre.nombre = objetoLibroJSON.getString("categorias_id")
+                        libro.nombre.id = objetoLibroJSON.getInt("id")
                         libro.editorial = objetoLibroJSON.getString("editoriales_id")
                         libro.precio = objetoLibroJSON.getDouble("precio")
 

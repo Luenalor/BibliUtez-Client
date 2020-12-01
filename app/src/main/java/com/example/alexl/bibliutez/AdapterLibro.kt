@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 
-class AdapterLibro(var context: Context, var libros: ArrayList<LibrosBean>) :
+class AdapterLibro(var context: Context, var libros: List<LibrosBean>) :
     RecyclerView.Adapter<AdapterLibro.ViewHolder>() {
 
     // inflar = Crear elementos bajo un diseño predefinido
@@ -42,7 +42,7 @@ class AdapterLibro(var context: Context, var libros: ArrayList<LibrosBean>) :
 
             nombre.text = libros.nombre
             autor.text = libros.autores
-            categoria.text = libros.categoria.categoria
+            categoria.text = libros.categoria.nombre
             numPag.text = libros.num_pag.toString()
             precio.text = libros.precio.toString()
 

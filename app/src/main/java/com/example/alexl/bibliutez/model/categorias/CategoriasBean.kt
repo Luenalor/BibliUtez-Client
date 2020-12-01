@@ -4,5 +4,5 @@ import java.io.Serializable
 
 class CategoriasBean(
     var id: Int=0,
-    var categoria: String=""
+    var nombre: String=""
 )

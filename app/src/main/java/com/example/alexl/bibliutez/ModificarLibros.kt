@@ -18,7 +18,7 @@ class ModificarLibros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.modificar_libros)
-
+        /*
         var libro:LibrosBean = intent.getSerializableExtra("libroModificacion") as LibrosBean
 
         txtModificarLibroTitulo.setText("${libro.nombre}")
@@ -36,7 +36,7 @@ class ModificarLibros : AppCompatActivity() {
             libroJson.put("id", libro.id)
             libroJson.put("nombre", txtModificarLibroTitulo.text.toString())
             libroJson.put("editorial", txtModificarLibroEditorial.text.toString())
-            libroJson.put("categoria", spnLibroCategoria.toString())
+            libroJson.put("nombre", spnLibroCategoria.toString())
             libroJson.put("precio", txtModificarLibroPrecio.text.toString().toDouble())
             libroJson.put("stock", txtModificarLibroStock.text.toString().toInt())
             libroJson.put("num_pag", txtModificarLibroNumPag.text.toString().toInt())
@@ -64,6 +64,6 @@ class ModificarLibros : AppCompatActivity() {
             startActivity(consultar)
         }
 
-
+        */
     }
 }
