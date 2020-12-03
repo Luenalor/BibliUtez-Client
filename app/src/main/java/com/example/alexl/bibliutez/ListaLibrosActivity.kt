@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import com.example.alexl.bibliutez.model.categorias.CategoriasBean
-import com.example.alexl.bibliutez.model.libros.JsonPlaceHolderApi
+import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.libros.LibrosBean
-import kotlinx.android.synthetic.main.gerente_gestion_libros.*
 import kotlinx.android.synthetic.main.gerente_gestion_libros.btnClientePerfil
 import kotlinx.android.synthetic.main.gerente_lista_libros.*
 import retrofit2.Call
@@ -39,11 +37,11 @@ class ListaLibrosActivity : AppCompatActivity() {
         //Retrofit builder
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://eee72448d1a5.ngrok.io/BibliUtez_war/libros/")
+            .baseUrl("http://192.168.0.6:8080/BibliUtez_war/libros/")
             .build()
 
         //object to call methods
-        val jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi::class.java)
+        val jsonPlaceHolderApi = retrofit.create(LibrosJsonPlaceHolder::class.java)
         val mycall: Call<List<LibrosBean>> = jsonPlaceHolderApi.librosFindAll()
 
         mycall.enqueue(object : Callback<List<LibrosBean>> {
@@ -52,6 +50,7 @@ class ListaLibrosActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<LibrosBean>>, response: Response<List<LibrosBean>>) {
+
                 listaLibros = response.body()!!
                 rcvLibros.layoutManager = manager
                 llenar(listaLibros, rcvLibros)
