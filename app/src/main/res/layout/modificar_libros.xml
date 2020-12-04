@@ -100,10 +100,20 @@
 
                 <EditText
                         android:id="@+id/txtModificarLibroEditorial"
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
                         android:hint="Editorial"
+                        android:inputType="text"
+                        android:textColorHint="@color/azulTransp"
+                        android:textColor="@color/azulTransp"
+                        android:textStyle="bold"></EditText>
+                <EditText
+                        android:id="@+id/txtModificarLibroAutor"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:hint="Autor"
                         android:inputType="text"
                         android:textColorHint="@color/azulTransp"
                         android:textColor="@color/azulTransp"

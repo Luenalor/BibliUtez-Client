@@ -1,10 +1,7 @@
 package com.example.alexl.bibliutez.model.libros
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface LibrosJsonPlaceHolder {
 
@@ -15,5 +12,9 @@ interface LibrosJsonPlaceHolder {
     fun librosAdd(@Body libro: LibrosBean):Call<Int>
 
     @PUT("update")
-    fun librosUpdate(libro:LibrosBean):Call<Boolean>
+    fun librosUpdate(@Body libro:LibrosBean):Call<Boolean>
+
+    @DELETE("delete/{id}")
+    fun libroDelete(@Path("id") id:Int):Call<Boolean>
+
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        android:id="@+id/Degradado"
-        android:layout_width="match_parent"
-        android:layout_margin="5dp"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:id="@+id/Degradado"
+              android:layout_width="match_parent"
+              android:layout_margin="5dp"
 
-        android:layout_height="wrap_content">
+              android:layout_height="wrap_content">
 
 
 
@@ -28,6 +28,7 @@
             <LinearLayout
                     android:layout_width="100sp"
                     android:layout_height="match_parent"
+                    android:layout_weight="0"
                     android:background="#00FFFFFF"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -36,12 +37,13 @@
                         android:id="@+id/libroImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/libro2" />
+                        app:srcCompat="@drawable/libro2"/>
             </LinearLayout>
 
             <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:background="#00FFFFFF"
                     android:orientation="vertical">
 
@@ -94,8 +96,8 @@
                             android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:text="Infantil"
-                            android:textSize="16sp"
-                            android:textColor="#323842"/>
+                            android:textColor="#323842"
+                            android:textSize="16sp" />
 
                     <TextView
                             android:id="@+id/txtCantPaginasLibro"
@@ -106,7 +108,7 @@
 
                             android:text="300 páginas"
                             android:textColor="#323842"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -129,6 +131,23 @@
                             android:textStyle="bold" />
 
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:orientation="vertical" android:layout_marginRight="10sp">
+
+                <ImageButton
+                        android:id="@+id/btnEliminar"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_gravity="center|center_horizontal"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/delete"/>
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

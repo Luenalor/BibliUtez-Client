@@ -70,7 +70,7 @@ class RegistroLibros : AppCompatActivity() {
                 val editorial = findViewById<EditText>(R.id.txtRegistroLibroEditorial).text.toString()
                 val autor = findViewById<EditText>(R.id.txtRegistroAutor).text.toString()
                 val input1 = findViewById(R.id.txtRegistroLibroPrecio) as EditText
-                val precio = Integer.parseInt((input1.text.toString()))
+                val precio = ((input1.text.toString())).toDouble()
                 val input2 = findViewById(R.id.txtRegistroLibroNumPag) as EditText
                 val num_pag = Integer.parseInt((input2.text.toString()))
                 val input3 = findViewById(R.id.txtRegistroLibroStock) as EditText
@@ -98,13 +98,13 @@ class RegistroLibros : AppCompatActivity() {
                 //Llenar object libroBean
                 val libro: LibrosBean = LibrosBean(
                     0,
-                    titulo.toString(),
-                    editorial.toString(),
-                    autor.toString(),
+                    titulo,
+                    editorial,
+                    autor,
                     categoria,
-                    precio.toDouble(),
-                    num_pag.toInt(),
-                    stock.toInt()
+                    precio,
+                    num_pag,
+                    stock
                 )
 
 

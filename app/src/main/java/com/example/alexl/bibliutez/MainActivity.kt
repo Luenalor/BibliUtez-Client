@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnIniciarSesion.setOnClickListener {
+            var login = Intent(this, GerenteMenuPrincipal::class.java)
+            startActivity(login)
+            /*
             try {
 
 
@@ -58,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     this@MainActivity,
                     "Ingresa los campos ${e}", Toast.LENGTH_LONG
                 ).show()
-            }
+            }*/
             // if usuariorole = 1
 
             /*else
