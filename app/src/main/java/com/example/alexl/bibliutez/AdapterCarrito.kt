@@ -42,7 +42,7 @@ class AdapterCarrito (var context: Context, var carrito: List<CarritosLibrosBean
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun rellenarVista(carrito: CarritosLibrosBean) {
 
-            val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+            val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
             var nombre = itemView.findViewById(R.id.ct_nombre) as TextView
             var precio = itemView.findViewById(R.id.ct_precio) as TextView

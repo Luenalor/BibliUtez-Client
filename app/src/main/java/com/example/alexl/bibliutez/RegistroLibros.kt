@@ -25,7 +25,7 @@ class RegistroLibros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registro_libros)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
         btnRegistroConsultarLibros.setOnClickListener {
             var consulta = Intent(this, ListaLibrosActivity::class.java)

@@ -23,7 +23,7 @@ class ModificarLibros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.modificar_libros)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
         var libro: LibrosBean = intent.getSerializableExtra("libroModificacion") as LibrosBean
 
         //llenar libro

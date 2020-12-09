@@ -28,7 +28,7 @@ class RegistroCliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registro_cliente)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
         var sp_option: String = "M"
         var sp_sexo = findViewById<Spinner>(R.id.sp_sexo)

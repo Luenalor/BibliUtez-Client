@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/Degradado"
@@ -12,22 +12,21 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
 
                 android:orientation="vertical">
 
             <LinearLayout
                     android:id="@+id/MainLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
@@ -55,8 +54,7 @@
                         android:textColor="@color/azulUtez"
                         android:textSize="24sp"
                         android:textStyle="bold"
-                        android:drawableLeft="@drawable/tinybibli"
-                        />
+                        android:drawableLeft="@drawable/tinybibli" />
 
                 <View
                         android:id="@+id/divider"
@@ -80,8 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:orientation="vertical" >
-                </LinearLayout>
+                        android:orientation="vertical"></LinearLayout>
 
 
                 <EditText
@@ -120,23 +117,25 @@
                         android:textColor="@color/azulUtez"
 
                         android:textStyle="bold"></EditText>
+
                 <EditText
                         android:id="@+id/txtRegistroClienteNacimiento"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:fontFamily="@font/roboto_light"
-                        android:hint="Fecha de Nacimiento (AAAA/MM/DD)"
+                        android:hint="Fecha de Nacimiento (DD/MM/AAAA)"
                         android:textColor="@color/azulUtez"
 
                         android:inputType="date"
                         android:textColorHint="@color/azulTransp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                     <TextView
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
@@ -147,7 +146,8 @@
                             android:text="Sexo:"
                             android:textColor="@color/azulTransp"
                             android:textSize="18sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
+
                     <Spinner
                             android:id="@+id/sp_sexo"
                             android:layout_width="match_parent"
@@ -155,8 +155,9 @@
                             android:entries="@array/sexo"
                             android:gravity="left"
                             android:spinnerMode="dialog"
-                            android:textColorHint="@color/azulTransp"/>
+                            android:textColorHint="@color/azulTransp" />
                 </LinearLayout>
+
                 <EditText
                         android:id="@+id/txtRegistroClienteCelular"
                         android:layout_width="match_parent"
@@ -168,7 +169,8 @@
                         android:textColor="@color/azulUtez"
 
                         android:textColorHint="@color/azulTransp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
+
                 <EditText
                         android:id="@+id/txtRegistroClienteEmail"
                         android:layout_width="match_parent"
@@ -188,7 +190,8 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:ems="10"
-                        android:id="@+id/txtRegistroClientePasseword" android:hint="Contraseña"/>
+                        android:id="@+id/txtRegistroClientePasseword"
+                        android:hint="Contraseña" />
 
                 <EditText
                         android:id="@+id/txtRegistroClienteDomicilio"
@@ -202,17 +205,19 @@
                         android:textColor="@color/azulUtez"
 
                         android:textStyle="bold"></EditText>
+
                 <Button
                         android:id="@+id/btnRegistroCliente"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
                         app:backgroundTint="@color/azulUtez"
                         android:text="REGISTRARSE"
-                        android:textColor="#FFFFFF" tools:text="dddd"/>
+                        android:textColor="#FFFFFF"
+                        tools:text="dddd" />
 
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

@@ -22,13 +22,13 @@ class ClienteMenuPrincipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_menu_principal)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
         //Traer object
-        val bundle = intent.extras
+      /*  val bundle = intent.extras
         val user:CarritosBean = bundle.getSerializable("user") as CarritosBean
 
         //
-        cliente_menu_bienvenido.setText("Bienvenido "+user.usuarios.nombre!! +user.usuarios.apellido1!!)
+        cliente_menu_bienvenido.setText("Bienvenido "+user.usuarios.nombre!! +user.usuarios.apellido1!!)*/
 
 
         btnClientePerfil.setOnClickListener{

@@ -42,7 +42,7 @@ class AdapterLibro(var context: Context, var libros: List<LibrosBean>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun rellenarVista(libros: LibrosBean) {
 
-            val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+            val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
             var nombre = itemView.findViewById(R.id.txtNombreView) as TextView
             var autor = itemView.findViewById(R.id.txtAutorLibro) as TextView

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
         btnIniciarSesion.setOnClickListener {
             try {

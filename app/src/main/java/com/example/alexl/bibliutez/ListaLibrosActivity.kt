@@ -21,12 +21,16 @@ class ListaLibrosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.gerente_lista_libros)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
         btnClientePerfil.setOnClickListener{
             var clientePerfil = Intent(this, ClientePerfil::class.java)
             startActivity(clientePerfil)
         }
 
+        btnHomeGerente.setOnClickListener{
+            var home = Intent(this,GerenteMenuPrincipal::class.java )
+            startActivity(home)
+        }
 
         //lista de libros
         var listaLibros: List<LibrosBean> = arrayListOf<LibrosBean>()

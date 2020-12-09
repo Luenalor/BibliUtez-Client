@@ -1,5 +1,6 @@
 package com.example.alexl.bibliutez
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.carrito_compras.*
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
+import kotlinx.android.synthetic.main.gerente_lista_libros.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,8 +23,13 @@ class CarritoCompras : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.carrito_compras)
-        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
+
+        btnHomeCliente.setOnClickListener{
+            var home = Intent(this,ListaLibrosCliente::class.java )
+            startActivity(home)
+        }
 
 
         //lista de libros

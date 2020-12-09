@@ -19,14 +19,14 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="20dp"
 
                 android:orientation="vertical">
 
             <LinearLayout
                     android:id="@+id/MainLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
@@ -56,14 +56,14 @@
                         android:textStyle="bold"
                         android:drawableLeft="@drawable/tinybibli"
 
-                />
+                        />
 
                 <View
                         android:id="@+id/divider"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@drawable/design_terciarios"/>
+                        android:background="@drawable/design_terciarios" />
 
                 <TextView
                         android:layout_width="match_parent"
@@ -73,14 +73,14 @@
                         android:text="Por favor, completa los siguientes campos"
                         android:textColor="@color/azulUtez"
                         android:textSize="15sp"
-                        android:textStyle="normal"/>
+                        android:textStyle="normal" />
 
                 <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:orientation="vertical"/>
+                        android:orientation="vertical" />
 
 
                 <EditText
@@ -117,7 +117,9 @@
                         android:inputType="text"
                         android:textColor="@color/azulTransp"
                         android:textColorHint="@color/azulTransp"
-                        android:textStyle="bold" android:hint="Autor"></EditText>
+                        android:textStyle="bold"
+                        android:hint="Autor"></EditText>
+
                 <TextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
@@ -128,7 +130,7 @@
                         android:text="Categoria:"
                         android:textColor="@color/azulTransp"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 <Spinner
                         android:id="@+id/spnLibroCategoria"
@@ -137,7 +139,7 @@
                         android:entries="@array/clasificacionesLibros"
                         android:gravity="left"
                         android:spinnerMode="dialog"
-                        android:textColorHint="@color/azulTransp"/>
+                        android:textColorHint="@color/azulTransp" />
 
                 <EditText
                         android:id="@+id/txtRegistroLibroPrecio"
@@ -149,7 +151,7 @@
                         android:textColor="@color/azulUtez"
                         android:textColorHighlight="@color/verdeUtez"
                         android:textColorHint="@color/azulTransp"
-                        android:textColorLink="@color/verdeUtez"/>
+                        android:textColorLink="@color/verdeUtez" />
 
                 <EditText
                         android:id="@+id/txtRegistroLibroNumPag"
@@ -161,7 +163,7 @@
                         android:textColor="@color/azulUtez"
                         android:textColorHighlight="@color/verdeUtez"
                         android:textColorHint="@color/azulTransp"
-                        android:textColorLink="@color/verdeUtez"/>
+                        android:textColorLink="@color/verdeUtez" />
 
 
                 <EditText
@@ -174,7 +176,7 @@
                         android:textColor="@color/azulUtez"
                         android:textColorHighlight="@color/verdeUtez"
                         android:textColorHint="@color/azulTransp"
-                        android:textColorLink="@color/verdeUtez"/>
+                        android:textColorLink="@color/verdeUtez" />
 
                 <LinearLayout
                         android:layout_width="match_parent"
@@ -189,7 +191,7 @@
                             android:layout_weight="1"
                             app:backgroundTint="@color/verdeUtez"
                             android:textColor="#FFFFFF"
-                            android:text="Registrar Libro"/>
+                            android:text="Registrar Libro" />
 
                     <Button
                             android:id="@+id/btnRegistroConsultarLibros"
@@ -199,7 +201,7 @@
                             android:layout_weight="1"
                             android:text="Consultar Libros"
                             app:backgroundTint="@color/azulUtez"
-                            android:textColor="#FFFFFF"/>
+                            android:textColor="#FFFFFF" />
 
                 </LinearLayout>
 
