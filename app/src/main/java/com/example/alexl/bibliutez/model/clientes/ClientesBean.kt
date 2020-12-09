@@ -2,6 +2,7 @@ package com.example.alexl.bibliutez.model.clientes
 
 import com.example.alexl.bibliutez.model.usuarios.UsuariosBean
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
 class ClientesBean(
@@ -14,4 +15,4 @@ class ClientesBean(
     val domicilio: String
 
 
-)
+): Serializable

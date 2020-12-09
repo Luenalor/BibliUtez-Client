@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
@@ -22,6 +23,12 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_menu_principal)
         val URL = "http://192.168.0.8:8080/BibliUtez_war/"
+        //Traer object
+        val bundle = intent.extras
+        val user:CarritosBean = bundle.getSerializable("user") as CarritosBean
+
+        //
+        cliente_menu_bienvenido.setText("Bienvenido "+user.usuarios.nombre!! +user.usuarios.apellido1!!)
 
 
         btnClientePerfil.setOnClickListener{

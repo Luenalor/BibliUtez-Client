@@ -18,7 +18,5 @@ interface UsuariosJsonPlaceHolder {
     @DELETE("delete/{id}")
     fun usuariosDelete(@Path("id") id:Int): Call<Boolean>
 
-    @GET("check")
-    fun usuarioscheck(
-        @Query("email") email:String,
-        @Query("password") password:String): Call<Boolean>}
+
+}

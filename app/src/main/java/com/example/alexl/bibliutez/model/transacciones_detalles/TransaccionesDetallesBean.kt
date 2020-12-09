@@ -3,6 +3,7 @@ package com.example.alexl.bibliutez.model.transacciones_detalles
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.transacciones.TransaccionesBean
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 class TransaccionesDetallesBean(
 
@@ -13,4 +14,4 @@ class TransaccionesDetallesBean(
     val libros: LibrosBean,
     val monto: Double
 
-)
+): Serializable

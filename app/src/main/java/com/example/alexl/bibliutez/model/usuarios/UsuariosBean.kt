@@ -2,6 +2,7 @@ package com.example.alexl.bibliutez.model.usuarios
 
 import com.example.alexl.bibliutez.model.roles.RolesBean
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 class UsuariosBean(
 
@@ -12,8 +13,8 @@ class UsuariosBean(
     val email: String,
     val estatus: Int,
     val sexo: String,
-    @SerializedName("roles_id")
+    @SerializedName("rolesid")
     val rol: RolesBean,
     val password: String
 
-)
+): Serializable
