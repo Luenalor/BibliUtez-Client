@@ -6,7 +6,7 @@ import retrofit2.http.*
 interface LibrosJsonPlaceHolder {
 
     @GET("findAll")
-    fun librosFindAll(): Call<List<LibrosBean>>
+    fun librosFindAll(): Call<ArrayList<LibrosBean>>
 
     @POST("add")
     fun librosAdd(@Body libro: LibrosBean):Call<Int>

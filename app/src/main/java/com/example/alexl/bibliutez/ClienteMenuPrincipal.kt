@@ -56,14 +56,15 @@ class ClienteMenuPrincipal : AppCompatActivity() {
 
         //object to call methods
         val jsonPlaceHolderApi = retrofit.create(LibrosJsonPlaceHolder::class.java)
-        val mycall: Call<List<LibrosBean>> = jsonPlaceHolderApi.librosFindAll()
+       // val mycall: Call<List<LibrosBean>> = jsonPlaceHolderApi.librosFindAll()
+        val mycall: Call<ArrayList<LibrosBean>> = jsonPlaceHolderApi.librosFindAll()
 
-        mycall.enqueue(object : Callback<List<LibrosBean>> {
-            override fun onFailure(call: Call<List<LibrosBean>>, t: Throwable) {
+        mycall.enqueue(object : Callback<ArrayList<LibrosBean>> {
+            override fun onFailure(call: Call<ArrayList<LibrosBean>>, t: Throwable) {
                 Log.e("onFailure!!!!!",t.message.toString())
             }
 
-            override fun onResponse(call: Call<List<LibrosBean>>, response: Response<List<LibrosBean>>) {
+            override fun onResponse(call: Call<ArrayList<LibrosBean>>, response: Response<ArrayList<LibrosBean>>) {
                 listaLibros = response.body()!!
                 cl_rcvLibros.layoutManager = manager
                 llenar(listaLibros, cl_rcvLibros)
