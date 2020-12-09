@@ -21,7 +21,7 @@ class ListaLibrosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.gerente_lista_libros)
-
+        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
         btnClientePerfil.setOnClickListener{
             var clientePerfil = Intent(this, ClientePerfil::class.java)
             startActivity(clientePerfil)
@@ -37,7 +37,7 @@ class ListaLibrosActivity : AppCompatActivity() {
         //Retrofit builder
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.0.6:8080/BibliUtez_war/libros/")
+            .baseUrl(URL+"libros/")
             .build()
 
         //object to call methods
@@ -60,92 +60,14 @@ class ListaLibrosActivity : AppCompatActivity() {
         })
 
 
-        /*var peticiones = Volley.newRequestQueue(this)
-        var url: String = "urlLoya"
-        var peticion = JsonObjectRequest(Request.Method.GET, url, null,
-            Response.Listener { listaLibrosJson ->
-                listaLibros = arrayListOf(LibrosBean())
-                var json: JSONArray =
-                    listaLibrosJson.getJSONArray("//checar array o objet + nombre: 31:39")
-                for (index in 0 until json.length()) {
 
-                    var objetoLibroJSON: JSONObject = json.getJSONObject(index)
-                    var libros: LibrosBean = LibrosBean()
-                    libros.id = objetoLibroJSON.getInt("id")
-                    libros.nombre = objetoLibroJSON.getString("nombre")
-                    libros.autores = objetoLibroJSON.getString("autores")
-                    libros.editorial = objetoLibroJSON.getString("editoriales")
-                    libros.num_pag = objetoLibroJSON.getInt("num_pag")
-                    libros.precio = objetoLibroJSON.getDouble("precio")
-                    libros.stock = objetoLibroJSON.getInt("stock")
-                    libros.nombre = CategoriasBean(id = 0, nombre = "")
-                    listaLibros.add(libros)
-
-                    var manager = LinearLayoutManager(this)
-                    var adapterLibros = AdapterLibro(this, listaLibros)
-                    rcvLibros.layoutManager = manager
-                    rcvLibros.adapter = adapterLibros
-
-                    adapterLibros!!.notifyDataSetChanged()
-                }
-            },
-            Response.ErrorListener { errorVolley ->
-                Toast.makeText(this, "Error -> $errorVolley", Toast.LENGTH_LONG).show()
-
-            }
-        )
-        peticiones.add(peticion)*/
-
-        /*listaLibros.add(
-            LibrosBean(
-                R.drawable.libro1,
-                "nombreLibro",
-                "editorialLibro",
-                "autorLibro",
-                CategoriasBean(1, "Renacuo"),
-                15.00,
-                105,
-                5
-            )
-        )
-        listaLibros.add(
-            LibrosBean(
-                R.drawable.libro1,
-                "nombreDos",
-                "editorialDos",
-                "autorDos",
-                CategoriasBean(2, "Nigga"),
-                20.00,
-                195,
-                4
-            )
-        )
-        listaLibros.add(
-            LibrosBean(
-                R.drawable.libro1,
-                "nombreTres",
-                "editorialTres",
-                "autorTres",
-                CategoriasBean(1, "Renacuo"),
-                52.00,
-                425,
-                14
-            )
-        )
-
-
-        var manager = LinearLayoutManager(this)
-        var adapterLibros = AdapterLibro(this, listaLibros)
-        rcvLibros.layoutManager = manager
-        rcvLibros.adapter = adapterLibros
-
-        adapterLibros!!.notifyDataSetChanged()*/
 
 
     }
     fun llenar(listaLibros:List<LibrosBean>, recyclerView: RecyclerView){
         var adapter = AdapterLibro(this, listaLibros)
         rcvLibros.adapter = adapter
+        adapter.notifyDataSetChanged()
 
     }
 }

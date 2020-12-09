@@ -23,6 +23,7 @@ class ModificarLibros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.modificar_libros)
+        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
         var libro: LibrosBean = intent.getSerializableExtra("libroModificacion") as LibrosBean
 
         //llenar libro
@@ -63,7 +64,7 @@ class ModificarLibros : AppCompatActivity() {
         //Retrofit builder
         val retrofit2 = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.0.6:8080/BibliUtez_war/categorias/")
+            .baseUrl(URL+"categorias/")
             .build()
 
         //object to call methods
@@ -107,7 +108,7 @@ class ModificarLibros : AppCompatActivity() {
                 //Retrofit builder
                 val retrofit = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://192.168.0.6:8080/BibliUtez_war/libros/")
+                    .baseUrl(URL+"libros/")
                     .build()
 
                 //object to call methods

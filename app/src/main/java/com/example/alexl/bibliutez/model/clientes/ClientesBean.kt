@@ -7,9 +7,9 @@ import java.util.*
 class ClientesBean(
 
     val id: Int,
-    val fecha_nacimiento: Date,
+    val fecha_nacimiento: String,
     val telefono: String,
-    @SerializedName("usuarios_id")
+    @SerializedName("usuariosBean")
     val usuarios: UsuariosBean,
     val domicilio: String
 

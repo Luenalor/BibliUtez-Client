@@ -22,13 +22,15 @@
         <activity android:name=".GerenteMenuPrincipal" />
         <activity android:name=".GerenteGestionLibros" />
         <activity android:name=".ClientePerfil" />
-        <activity android:name=".ClienteMenuPrincipal" />
-        <activity android:name=".CarritoCompras" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ClienteMenuPrincipal" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".CarritoCompras" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

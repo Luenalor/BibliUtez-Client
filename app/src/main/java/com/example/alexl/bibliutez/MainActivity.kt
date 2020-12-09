@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.usuarios.UsuariosJsonPlaceHolder
@@ -21,11 +22,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
 
         btnIniciarSesion.setOnClickListener {
             var login = Intent(this, GerenteMenuPrincipal::class.java)
             startActivity(login)
-            /*
             try {
 
 
@@ -35,11 +36,11 @@ class MainActivity : AppCompatActivity() {
                 //Retrofit builder
                 val retrofit = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://192.168.0.6:8080/BibliUtez_war/usuarios/")
+                    .baseUrl(URL + "carritos/")
                     .build()
 
                 //object to call methods
-                val jsonPlaceHolderApi = retrofit.create(UsuariosJsonPlaceHolder::class.java)
+                val jsonPlaceHolderApi = retrofit.create(CarritosLibrosJsonPlaceHolder::class.java)
                 val mycall: Call<Boolean> = jsonPlaceHolderApi.usuarioscheck(email, password)
 
                 mycall.enqueue(object : Callback<Boolean> {
@@ -61,22 +62,17 @@ class MainActivity : AppCompatActivity() {
                     this@MainActivity,
                     "Ingresa los campos ${e}", Toast.LENGTH_LONG
                 ).show()
-            }*/
-            // if usuariorole = 1
 
-            /*else
-             var login = Intent(this, GerenteMenuPrincipal::class.java)
-             startActivity(login)*/
+            }
+
+            btnRegistroCliente.setOnClickListener {
+
+                var registroCliente = Intent(this, RegistroCliente::class.java)
+                startActivity(registroCliente)
+            }
+
         }
-
-        btnRegistroCliente.setOnClickListener {
-
-            var registroCliente = Intent(this, RegistroCliente::class.java)
-            startActivity(registroCliente)
-        }
-
     }
-
     fun checkAccess(access: Boolean) {
         if (access) {
             var login = Intent(this, GerenteMenuPrincipal::class.java)
@@ -88,4 +84,5 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
+
 }

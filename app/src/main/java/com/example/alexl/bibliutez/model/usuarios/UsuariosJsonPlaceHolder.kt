@@ -13,12 +13,12 @@ interface UsuariosJsonPlaceHolder {
     fun usuariosAdd(@Body usuario:UsuariosBean ): Call<Int>
 
     @PUT("update")
-    fun usuariosUpdate(usuario: UsuariosBean): Call<Boolean>
+    fun usuariosUpdate(@Body usuario: UsuariosBean): Call<Boolean>
+
+    @DELETE("delete/{id}")
+    fun usuariosDelete(@Path("id") id:Int): Call<Boolean>
 
     @GET("check")
     fun usuarioscheck(
         @Query("email") email:String,
-        @Query("password") password:String): Call<Boolean>
-
-
-}
+        @Query("password") password:String): Call<Boolean>}

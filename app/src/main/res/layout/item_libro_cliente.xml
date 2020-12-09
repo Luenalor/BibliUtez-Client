@@ -34,7 +34,7 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:id="@+id/libroImg"
+                        android:id="@+id/cl_libroImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/libro2"/>
@@ -54,7 +54,7 @@
                         android:orientation="horizontal">
 
                     <TextView
-                            android:id="@+id/txtNombreView"
+                            android:id="@+id/cl_txtNombreView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -71,7 +71,7 @@
                         android:orientation="horizontal">
 
                     <TextView
-                            android:id="@+id/txtAutorLibro"
+                            android:id="@+id/cl_txtAutorLibro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -96,7 +96,7 @@
                             android:textColor="#323842"
                             android:textSize="16sp"/>
                     <TextView
-                            android:id="@+id/txtCategoriaLibro"
+                            android:id="@+id/cl_txtCategoriaLibro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -112,7 +112,7 @@
                         android:orientation="horizontal">
 
                     <TextView
-                            android:id="@+id/txtCantPaginasLibro"
+                            android:id="@+id/cl_txtCantPaginasLibro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -152,7 +152,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold"/>
                     <TextView
-                            android:id="@+id/txtPrecioLibro"
+                            android:id="@+id/cl_txtPrecioLibro"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginTop="5dp"
@@ -183,13 +183,13 @@
                     android:orientation="vertical" android:layout_marginRight="10sp">
 
                 <ImageButton
-                        android:id="@+id/btnEliminar"
+                        android:id="@+id/btnAgregar"
                         android:layout_width="30sp"
                         android:layout_height="30sp"
                         android:layout_gravity="center|center_horizontal"
                         android:background="#00FFFFFF"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/delete"/>
+                        app:srcCompat="@drawable/add"/>
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

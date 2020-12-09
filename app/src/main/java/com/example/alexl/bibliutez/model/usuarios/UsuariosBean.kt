@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 class UsuariosBean(
 
-    val id: Int,
+    var id: Int,
     val nombre: String,
     val apellido1: String,
     val apellido2: String,
     val email: String,
-    val status: Boolean,
-    val sexo: Char,
+    val estatus: Int,
+    val sexo: String,
     @SerializedName("roles_id")
     val rol: RolesBean,
     val password: String

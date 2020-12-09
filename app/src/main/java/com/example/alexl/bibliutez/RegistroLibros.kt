@@ -25,7 +25,7 @@ class RegistroLibros : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registro_libros)
-
+        val URL = "http://192.168.0.8:8080/BibliUtez_war/"
 
         btnRegistroConsultarLibros.setOnClickListener {
             var consulta = Intent(this, ListaLibrosActivity::class.java)
@@ -79,7 +79,7 @@ class RegistroLibros : AppCompatActivity() {
                 //Retrofit builder
                 val retrofit2 = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://192.168.0.6:8080/BibliUtez_war/categorias/")
+                    .baseUrl(URL+"categorias/")
                     .build()
 
                 //object to call methods
@@ -111,7 +111,7 @@ class RegistroLibros : AppCompatActivity() {
                 //Retrofit builder
                 val retrofit = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("http://192.168.0.6:8080/BibliUtez_war/libros/")
+                    .baseUrl(URL+"libros/")
                     .build()
 
                 //object to call methods
@@ -128,7 +128,7 @@ class RegistroLibros : AppCompatActivity() {
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
                         Toast.makeText(
                             this@RegistroLibros,
-                            "Agregado correctamente", Toast.LENGTH_LONG
+                            "Agregado correctamente"+response.body(), Toast.LENGTH_LONG
                         ).show()
                     }
                 })

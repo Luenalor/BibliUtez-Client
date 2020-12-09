@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/Degradado"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        tools:context=".MainActivity">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/Degradado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                tools:context=".MainActivity">
 
     <LinearLayout
             android:id="@+id/MainLayout"
@@ -30,7 +30,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/bibliutez" />
+                android:src="@drawable/bibliutez"/>
 
 
         <EditText
@@ -49,7 +49,7 @@
                 android:padding="10dp"
                 android:textColor="@color/verdeUtez"
                 android:textColorHint="@color/verdeUtez"
-                android:textSize="21sp" />
+                android:textSize="21sp"/>
 
         <EditText
                 android:id="@+id/password"
@@ -67,7 +67,7 @@
                 android:padding="10dp"
                 android:textColor="@color/verdeUtez"
                 android:textColorHint="@color/verdeUtez"
-                android:textSize="21sp" />
+                android:textSize="21sp"/>
 
 
         <Button
@@ -83,7 +83,7 @@
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/azulUtez" />
+                app:backgroundTint="@color/azulUtez"/>
 
         <Button
                 android:id="@+id/btnRegistroCliente"
@@ -97,6 +97,6 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/verdeUtez" />
+                app:backgroundTint="@color/verdeUtez"/>
     </LinearLayout>
 </RelativeLayout>

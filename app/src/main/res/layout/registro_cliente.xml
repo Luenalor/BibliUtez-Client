@@ -20,7 +20,7 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="20dp"
 
                 android:orientation="vertical">
 
@@ -34,8 +34,8 @@
                     android:layout_marginLeft="20dp"
 
                     android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/layout_transparente"
                     android:orientation="vertical"
                     android:paddingLeft="30dp"
@@ -80,7 +80,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:orientation="vertical" />
+                        android:orientation="vertical" >
+                </LinearLayout>
 
 
                 <EditText
@@ -125,13 +126,49 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:fontFamily="@font/roboto_light"
-                        android:hint="Fecha de Nacimiento (DD/MM/AAAA)"
+                        android:hint="Fecha de Nacimiento (AAAA/MM/DD)"
                         android:textColor="@color/azulUtez"
 
                         android:inputType="date"
                         android:textColorHint="@color/azulTransp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Sexo:"
+                            android:textColor="@color/azulTransp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+                    <Spinner
+                            android:id="@+id/sp_sexo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/sexo"
+                            android:gravity="left"
+                            android:spinnerMode="dialog"
+                            android:textColorHint="@color/azulTransp"/>
+                </LinearLayout>
+                <EditText
+                        android:id="@+id/txtRegistroClienteCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:fontFamily="@font/roboto_light"
+                        android:hint="Celular (10 Digitos)"
+                        android:inputType="phone"
+                        android:textColor="@color/azulUtez"
+
+                        android:textColorHint="@color/azulTransp"
+                        android:textStyle="bold"/>
                 <EditText
                         android:id="@+id/txtRegistroClienteEmail"
                         android:layout_width="match_parent"
@@ -145,41 +182,34 @@
                         android:textColorHint="@color/azulTransp"
                         android:textStyle="bold" />
 
+
                 <EditText
-                        android:id="@+id/txtRegistroClienteCelular"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="textPassword"
                         android:ems="10"
-                        android:fontFamily="@font/roboto_light"
-                        android:hint="Celular (10 Digitos)"
-                        android:inputType="phone"
-                        android:textColor="@color/azulUtez"
-
-                        android:textColorHint="@color/azulTransp"
-                        android:textStyle="bold" />
-
+                        android:id="@+id/txtRegistroClientePasseword" android:hint="Contraseña"/>
 
                 <EditText
                         android:id="@+id/txtRegistroClienteDomicilio"
-                        android:layout_width="fill_parent"
+                        android:layout_width="282dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
                         android:hint="Domicilio"
                         android:inputType="textMultiLine"
-                        android:lines="3"
+                        android:lines="1"
                         android:textColorHint="@color/azulTransp"
                         android:textColor="@color/azulUtez"
 
                         android:textStyle="bold"></EditText>
-
                 <Button
-                        android:id="@+id/btnRegistroLibro"
+                        android:id="@+id/btnRegistroCliente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:backgroundTint="@color/azulUtez"
                         android:text="REGISTRARSE"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#FFFFFF" tools:text="dddd"/>
 
             </LinearLayout>
         </LinearLayout>
