@@ -27,7 +27,7 @@ class CarritoCompras : AppCompatActivity() {
 
 
         btnHomeCliente.setOnClickListener{
-            var home = Intent(this,ListaLibrosCliente::class.java )
+            var home = Intent(this,ClienteMenuPrincipal::class.java )
             startActivity(home)
         }
 

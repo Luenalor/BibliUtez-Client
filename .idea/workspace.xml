@@ -36,6 +36,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2401421-fe01-4d0c-a1df-670e45505507" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/log_out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_filter2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -46,15 +48,31 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterLibroCliente.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterLibroCliente.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClienteMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClienteMenuPrincipal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/GerenteMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/GerenteMenuPrincipal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ListaLibrosActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ListaLibrosActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ListaLibrosCliente.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/carrito_compras.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/carrito_compras.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cliente_menu_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cliente_menu_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cliente_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cliente_perfil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gerente_gestion_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gerente_gestion_libros.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gerente_lista_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gerente_lista_libros.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gerente_menu_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gerente_menu_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_carrito.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_carrito.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_libro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_libro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_libro_cliente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_libro_cliente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/modificar_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/modificar_libros.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/registro_cliente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/registro_cliente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/registro_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/registro_libros.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5X_API_28]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -216,6 +234,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="266" key="#PSD" timestamp="1607549403564">
@@ -226,29 +245,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="423" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607547494527" />
-    <state x="117" y="306" key="AndroidCreateResourceFileDialog" timestamp="1607546027709">
+    <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607562288906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="117" y="306" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607546027709" />
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom" timestamp="1607557414752">
+    <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607562288906" />
+    <state x="117" y="306" key="AndroidCreateResourceFileDialog" timestamp="1607562067227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607557414752" />
-    <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1607557414752">
+    <state x="117" y="306" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607562067227" />
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1607565844515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607557414752" />
-    <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1607557414752">
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607565844515" />
+    <state width="1877" height="344" key="GridCell.Tab.0.center" timestamp="1607565844515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607557414752" />
-    <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1607557414752">
+    <state width="1877" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607565844515" />
+    <state width="1877" height="344" key="GridCell.Tab.0.left" timestamp="1607565844515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607557414752" />
-    <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1607544510760">
+    <state width="1877" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607565844515" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right" timestamp="1607565844515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="776" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607544510760" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607565844515" />
+    <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1607558190558">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="776" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607558190558" />
   </component>
 </project>

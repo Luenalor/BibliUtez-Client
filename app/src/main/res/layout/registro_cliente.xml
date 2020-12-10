@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/Degradado"
@@ -40,7 +40,7 @@
                     android:paddingLeft="30dp"
                     android:paddingTop="20dp"
                     android:paddingRight="30dp"
-                    android:paddingBottom="50dp">
+                    android:paddingBottom="20dp">
 
 
                 <TextView
@@ -214,10 +214,10 @@
                         app:backgroundTint="@color/azulUtez"
                         android:text="REGISTRARSE"
                         android:textColor="#FFFFFF"
-                        tools:text="dddd" />
+                        tools:text="REGISTRARSE" />
 
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

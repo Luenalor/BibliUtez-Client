@@ -6,9 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.carritos.CarritosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.libros.LibrosBean
@@ -18,10 +16,48 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class AdapterLibroCliente(var context: Context, var libros: List<LibrosBean>) :
+class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean>) :
 
-    RecyclerView.Adapter<AdapterLibroCliente.ViewHolder>() {
+    RecyclerView.Adapter<AdapterLibroCliente.ViewHolder>(), Filterable {
 
+    var librosFiltrerCliente: ArrayList<LibrosBean> = ArrayList<LibrosBean>()
+
+    init {
+        librosFiltrerCliente = libros
+    }
+
+
+    override fun getFilter(): Filter {
+        return object : Filter(){
+            // Filter??? para ejecutar el filtro y hacer la búsqueda de atributos.
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                var query2:String = constraint.toString()
+
+                if(query2.isEmpty()){
+                    librosFiltrerCliente = libros
+                }else{
+                    var resultadoLibros = ArrayList<LibrosBean>()
+                    for (libros in libros){
+                        if (libros.nombre.toLowerCase().contains(query2.toLowerCase()) || libros.categoria.nombre.toLowerCase().contains(query2.toLowerCase()) || libros.autores.toLowerCase().contains(query2.toLowerCase())){
+                            resultadoLibros.add(libros)
+                        }
+                    }
+                    librosFiltrerCliente = resultadoLibros
+                }
+                var results2 = FilterResults()
+                results2.values = librosFiltrerCliente
+
+                return results2
+            }
+
+            // Actuailizar los datos en el recycler.
+            override fun publishResults(constraint: CharSequence?, results2: FilterResults?) {
+                librosFiltrerCliente = results2?.values as ArrayList<LibrosBean>
+                notifyDataSetChanged()
+            }
+
+        }
+    }
 
     // inflar = Crear elementos bajo un diseño predefinido
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -31,11 +67,11 @@ class AdapterLibroCliente(var context: Context, var libros: List<LibrosBean>) :
 
     // Delimitar el número de elementos a inflar (crear)
     override fun getItemCount(): Int {
-        return libros.size
+        return librosFiltrerCliente.size
     }
 
     override fun onBindViewHolder(p0: AdapterLibroCliente.ViewHolder, p1: Int) {
-        p0.rellenarVista(libros[p1])
+        p0.rellenarVista(librosFiltrerCliente[p1])
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

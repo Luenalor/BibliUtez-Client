@@ -35,7 +35,7 @@ class ListaLibrosActivity : AppCompatActivity() {
             startActivity(clientePerfil)
         }
 
-        btnHomeGerente.setOnClickListener{
+        btnSalirCliente.setOnClickListener{
             var home = Intent(this,GerenteMenuPrincipal::class.java )
             startActivity(home)
         }

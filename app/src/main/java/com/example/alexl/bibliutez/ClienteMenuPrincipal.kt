@@ -1,15 +1,22 @@
 package com.example.alexl.bibliutez
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.SearchView
 import android.util.Log
+import android.view.Menu
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
+import kotlinx.android.synthetic.main.cliente_menu_principal.btnClientePerfil
+import kotlinx.android.synthetic.main.gerente_menu_principal.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,6 +25,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ClienteMenuPrincipal : AppCompatActivity() {
 
+    lateinit var sharedPreferences: SharedPreferences
+    var adapterCliente:AdapterLibroCliente? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +38,20 @@ class ClienteMenuPrincipal : AppCompatActivity() {
 
         //
         cliente_menu_bienvenido.setText("Bienvenido "+user.usuarios.nombre!! +user.usuarios.apellido1!!)*/
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+
+
+        btnSalirCliente.setOnClickListener {
+            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            var logOut = Intent(this, MainActivity::class.java)
+            startActivity(logOut)
+            finish()
+
+        }
 
 
         btnClientePerfil.setOnClickListener{
@@ -43,7 +66,7 @@ class ClienteMenuPrincipal : AppCompatActivity() {
 
 
         //lista de libros
-        var listaLibros: List<LibrosBean> = arrayListOf<LibrosBean>()
+        var listaLibros: ArrayList<LibrosBean> = arrayListOf<LibrosBean>()
         var manager = LinearLayoutManager(this)
 
 
@@ -73,10 +96,34 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         })
 
     }
-    fun llenar(listaLibros:List<LibrosBean>, recyclerView: RecyclerView){
-        var adapter = AdapterLibroCliente(this, listaLibros)
-        cl_rcvLibros.adapter = adapter
-        adapter.notifyDataSetChanged()
+    fun llenar(listaLibros:ArrayList<LibrosBean>, recyclerView: RecyclerView){
+        adapterCliente = AdapterLibroCliente(this, listaLibros)
+        cl_rcvLibros.adapter = adapterCliente
+        adapterCliente!!.notifyDataSetChanged()
 
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_filter2, menu)
+        var service = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        var txtSearch = menu?.findItem(R.id.txtBuscarLibroCliente)?.actionView as SearchView
+        txtSearch.setSearchableInfo(service.getSearchableInfo(componentName))
+        txtSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            //Ejecuta la busqueda al momento de dar ENTER
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                adapterCliente?.filter?.filter(query)
+                return true
+            }
+
+            //Ejecuta la busqueda al ir agregando caracteres.
+            override fun onQueryTextChange(query: String?): Boolean {
+                adapterCliente?.filter?.filter(query)
+                return true
+            }
+
+        })
+
+        return true
     }
 }

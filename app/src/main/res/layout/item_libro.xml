@@ -14,7 +14,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#25002E60"
+            android:background="@color/verdeUtez"
             android:layout_margin="5dp"
             app:cardBackgroundColor="#00002E60">
 
@@ -184,12 +184,12 @@
 
                 <ImageButton
                         android:id="@+id/btnEliminar"
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center|center_horizontal"
                         android:background="#00FFFFFF"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/delete"/>
+                        app:srcCompat="@drawable/delete" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
