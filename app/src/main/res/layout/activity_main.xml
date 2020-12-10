@@ -94,7 +94,7 @@
         <Button
                 android:id="@+id/btnRegistroCliente"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_text_buttons"
                 android:fontFamily="@font/roboto_light"
@@ -103,6 +103,6 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/verdeUtez"/>
+                app:backgroundTint="@color/verdeUtez" />
     </LinearLayout>
 </RelativeLayout>

@@ -100,18 +100,18 @@
                     android:paddingRight="30dp"
                     android:paddingBottom="50dp">
 
+
                 <TextView
+                        android:id="@+id/menuNombreCliente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/tinybibli"
                         android:drawableRight="@drawable/libros2"
                         android:fontFamily="@font/roboto_light"
                         android:gravity="center"
-                        android:text="Bienvenido Luis Ortiz"
                         android:textColor="@color/azulUtez"
                         android:textSize="18sp"
-                        android:textStyle="normal|bold" android:id="@+id/cliente_menu_bienvenido"/>
-
+                        android:textStyle="normal|bold" />
 
                 <TextView
                         android:layout_width="match_parent"

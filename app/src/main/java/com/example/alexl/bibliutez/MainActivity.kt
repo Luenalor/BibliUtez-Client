@@ -3,27 +3,20 @@ package com.example.alexl.bibliutez
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.carritos.CarritosJsonPlaceHolder
-import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosJsonPlaceHolder
-import com.example.alexl.bibliutez.model.libros.LibrosBean
-import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
-import com.example.alexl.bibliutez.model.roles.RolesBean
-import com.example.alexl.bibliutez.model.usuarios.UsuariosJsonPlaceHolder
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.prefs.AbstractPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var sharePreferences: SharedPreferences
     var recordar = false
+
+    val b : Bundle = Bundle()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +38,18 @@ class MainActivity : AppCompatActivity() {
         if (recordar){
             when(idRol){
                 1 -> {
-                    var gerente = Intent(this, GerenteMenuPrincipal::class.java)
-                    startActivity(gerente)
+                    var intent = Intent(this, GerenteMenuPrincipal::class.java)
+
+                    startActivity(intent)
                     finish()
                 }
-                2 ->{
-                    var cliente = Intent(this, ClienteMenuPrincipal::class.java)
-                    startActivity(cliente)
+                2 -> {
+                    var intent = Intent(this, ClienteMenuPrincipal::class.java)
+
+
+
+
+                    startActivity(intent)
                     finish()
                 }
                 else -> {
@@ -89,31 +89,47 @@ class MainActivity : AppCompatActivity() {
                         ).show()
                     }
 
-                    override fun onResponse(call: Call<CarritosBean>, response: Response<CarritosBean>) {
+                    override fun onResponse(
+                        call: Call<CarritosBean>,
+                        response: Response<CarritosBean>
+                    ) {
 
-                            var idCarrito = response.body()!!.id
-                            var idUsuario = response.body()!!.usuarios?.id
-                            var nombre = response.body()!!.usuarios?.nombre
-                            var apellido1 = response.body()!!.usuarios?.apellido1
-                            var apellido2 = response.body()!!.usuarios?.apellido2
-                            var emailDos = response.body()!!.usuarios?.email
-                            var estatus = response.body()!!.usuarios?.estatus
-                            var sexo = response.body()!!.usuarios?.sexo
-                            var idRol = response.body()!!.usuarios?.rol?.id
-
-
-
-                        Log.d("idCarrito", idCarrito.toString()!!)
-                        Log.d("idCarrito", idCarrito.toString()!!)
-                        Log.d("idCarrito", idCarrito.toString()!!)
-                        Log.d("idCarrito", idCarrito.toString()!!)
-                        Log.d("idCarrito", idCarrito.toString()!!)
-                        Log.d("idCarrito", idCarrito.toString()!!)
+                        var idCarrito = response.body()!!.id
+                        var idUsuario = response.body()!!.usuarios?.id
+                        var nombre = response.body()!!.usuarios?.nombre
+                        var apellido1 = response.body()!!.usuarios?.apellido1
+                        var apellido2 = response.body()!!.usuarios?.apellido2
+                        var emailDos = response.body()!!.usuarios?.email
+                        var estatus = response.body()!!.usuarios?.estatus
+                        var sexo = response.body()!!.usuarios?.sexo
+                        var idRol = response.body()!!.usuarios?.rol?.id
 
 
-                        checkAccess(idCarrito, idUsuario, nombre, apellido1, apellido2, emailDos, estatus, sexo, idRol, email, password, checkBox)
+                        b.putString("nombre", nombre)
+                        intent.putExtras(b)
+                        startActivity(intent)
 
-                            //checkAccess(response.body()!!)
+                        Log.e("nombre", nombre)
+                        Log.e("putExtras", b.getString("nombre"))
+
+
+
+                        checkAccess(
+                            idCarrito,
+                            idUsuario,
+                            nombre,
+                            apellido1,
+                            apellido2,
+                            emailDos,
+                            estatus,
+                            sexo,
+                            idRol,
+                            email,
+                            password,
+                            checkBox
+                        )
+
+                        //checkAccess(response.body()!!)
                     }
                 })
             } catch (e: Exception) {
@@ -125,6 +141,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+
         btnRegistroCliente.setOnClickListener {
 
             var registroCliente = Intent(this, RegistroCliente::class.java)
@@ -132,10 +150,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun checkAccess(idCarrito: Int, idUsuario: Int, nombre: String?, apellido1: String?, apellido2:
-    String, emailDos: String, estatus: Int, sexo: String, idRol: Int, email: String, password: String, recordar: Boolean ) {
+    fun checkAccess(
+        idCarrito: Int,
+        idUsuario: Int,
+        nombre: String?,
+        apellido1: String?,
+        apellido2:
+        String,
+        emailDos: String,
+        estatus: Int,
+        sexo: String,
+        idRol: Int,
+        email: String,
+        password: String,
+        recordar: Boolean
+    ) {
+
 
         if (email == emailDos){
+
+
+
+
+
+
             when(idRol){
                 1 -> {
                     var editor: SharedPreferences.Editor = sharePreferences.edit()
@@ -151,12 +189,13 @@ class MainActivity : AppCompatActivity() {
                     editor.putString("sexo", sexo)
 
 
+
                     editor.apply()
                     var gerente = Intent(this, GerenteMenuPrincipal::class.java)
                     startActivity(gerente)
                     finish()
                 }
-                2 ->{
+                2 -> {
 
                     var editor: SharedPreferences.Editor = sharePreferences.edit()
                     editor.putBoolean("recordar", recordar)
@@ -169,6 +208,8 @@ class MainActivity : AppCompatActivity() {
                     editor.putString("emailDos", emailDos)
                     editor.putInt("estatus", estatus)
                     editor.putString("sexo", sexo)
+
+
 
 
                     editor.apply()
@@ -211,6 +252,8 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }*/
     }
+
+
 
 
 }

@@ -8,4 +8,5 @@ class ClientePerfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_perfil)
     }
+
 }

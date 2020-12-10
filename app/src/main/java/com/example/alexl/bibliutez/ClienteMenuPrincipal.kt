@@ -4,19 +4,17 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.Menu
-import com.example.alexl.bibliutez.model.carritos.CarritosBean
+import android.widget.Toast
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
-import kotlinx.android.synthetic.main.cliente_menu_principal.btnClientePerfil
-import kotlinx.android.synthetic.main.gerente_menu_principal.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,12 +30,21 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_menu_principal)
         val URL = "http://192.168.1.176:8080/BibliUtez_war/"
-        //Traer object
-      /*  val bundle = intent.extras
-        val user:CarritosBean = bundle.getSerializable("user") as CarritosBean
 
-        //
-        cliente_menu_bienvenido.setText("Bienvenido "+user.usuarios.nombre!! +user.usuarios.apellido1!!)*/
+        var bundle = intent.extras
+        var nombre = intent.getStringExtra("nombre")
+        if (bundle != null){
+            menuNombreCliente.setText(nombre)
+
+        }else{
+            Toast.makeText(
+                this@ClienteMenuPrincipal,
+                "NULOS", Toast.LENGTH_LONG
+            ).show()
+        }
+
+
+
 
         sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
@@ -74,7 +81,7 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         //Retrofit builder
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(URL+"libros/")
+            .baseUrl(URL + "libros/")
             .build()
 
         //object to call methods
@@ -84,10 +91,13 @@ class ClienteMenuPrincipal : AppCompatActivity() {
 
         mycall.enqueue(object : Callback<ArrayList<LibrosBean>> {
             override fun onFailure(call: Call<ArrayList<LibrosBean>>, t: Throwable) {
-                Log.e("onFailure!!!!!",t.message.toString())
+                Log.e("onFailure!!!!!", t.message.toString())
             }
 
-            override fun onResponse(call: Call<ArrayList<LibrosBean>>, response: Response<ArrayList<LibrosBean>>) {
+            override fun onResponse(
+                call: Call<ArrayList<LibrosBean>>,
+                response: Response<ArrayList<LibrosBean>>
+            ) {
                 listaLibros = response.body()!!
                 cl_rcvLibros.layoutManager = manager
                 llenar(listaLibros, cl_rcvLibros)
@@ -96,7 +106,7 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         })
 
     }
-    fun llenar(listaLibros:ArrayList<LibrosBean>, recyclerView: RecyclerView){
+    fun llenar(listaLibros: ArrayList<LibrosBean>, recyclerView: RecyclerView){
         adapterCliente = AdapterLibroCliente(this, listaLibros)
         cl_rcvLibros.adapter = adapterCliente
         adapterCliente!!.notifyDataSetChanged()
@@ -109,7 +119,7 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         var service = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         var txtSearch = menu?.findItem(R.id.txtBuscarLibroCliente)?.actionView as SearchView
         txtSearch.setSearchableInfo(service.getSearchableInfo(componentName))
-        txtSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        txtSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             //Ejecuta la busqueda al momento de dar ENTER
             override fun onQueryTextSubmit(query: String?): Boolean {
                 adapterCliente?.filter?.filter(query)
