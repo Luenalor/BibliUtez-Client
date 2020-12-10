@@ -36,25 +36,23 @@
 
 
         <TextView
-                android:id="@+id/clienteNombre"
+                android:id="@+id/nombrePerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
-                android:text="Luis Enrique Álvarez Ortiz"
                 android:textColor="@color/verdeUtez"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
         <TextView
-                android:id="@+id/clienteEmail"
+                android:id="@+id/emailPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
-                android:text="20193TN073@utez.edu.mx"
                 android:textColor="@color/azulUtez"
                 android:textSize="20sp" />
 
@@ -82,13 +80,13 @@
                         android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/clienteFechaNacimiento"
+                        android:id="@+id/fechaNacimientoPerfil"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto_light"
                         android:gravity="center"
-                        android:text="22/07/2020"
+                        android:text="No aplica."
                         android:textColor="@color/azulUtez"
                         android:textSize="18sp" />
             </LinearLayout>
@@ -111,15 +109,15 @@
                         android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/clienteCelular"
+                        android:id="@+id/celularPerfil"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto_light"
                         android:gravity="center"
-                        android:text="7773445036"
                         android:textColor="@color/azulUtez"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:text="No aplica." />
             </LinearLayout>
 
             <LinearLayout
@@ -140,15 +138,15 @@
                         android:textStyle="bold" />
 
                 <TextView
-                        android:id="@+id/clienteDomicilio"
+                        android:id="@+id/domicilioPerfil"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto_light"
                         android:gravity="center"
-                        android:text="Cuernavaca, Morelos"
                         android:textColor="@color/azulUtez"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:text="No aplica." />
             </LinearLayout>
         </LinearLayout>
 

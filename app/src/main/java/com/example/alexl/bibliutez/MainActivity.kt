@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
@@ -27,28 +26,54 @@ class MainActivity : AppCompatActivity() {
 
     val b : Bundle = Bundle()
 
+    var nombre: String = ""
+    var idCarrito: Int = 0
+    var idUsuario : Int = 0
+    var apellido1 : String = ""
+    var apellido2 : String = ""
+    var domicilio : String = ""
+    var telefono : String = ""
+    var emailDos : String = ""
+    var estatus : Int = 0
+    var sexo : String = ""
+    var idRol : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //------------------------------------------
         sharePreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         recordar = sharePreferences.getBoolean("recordar", false)
+        //------------------------------------------
+
+        val prefs = getSharedPreferences("shared_login_data", MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putString("nombre", nombre);
+        editor.putString("apellido1", apellido1);
+        editor.putString("apellido2", apellido2);
+        editor.putString("emailDos", emailDos);
+        editor.putString("domicilio", domicilio);
+        editor.putString("sexo", sexo);
+        editor.putInt("estatus", estatus);
+        editor.putInt("idCarrito", idCarrito);
+        editor.putInt("idUsuario", idUsuario);
+        editor.putInt("idRol", idRol);
+        editor.commit();
+
+        //------------------------------------------
 
         var idRol = sharePreferences.getInt("idRol", 0)
         if (recordar){
             when(idRol){
                 1 -> {
                     var intent = Intent(this, GerenteMenuPrincipal::class.java)
-
                     startActivity(intent)
+
                     finish()
                 }
                 2 -> {
                     var intent = Intent(this, ClienteMenuPrincipal::class.java)
-
-
-
-
                     startActivity(intent)
                     finish()
                 }
@@ -62,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
         val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
+
         btnIniciarSesion.setOnClickListener {
 
             var checkBox = findViewById<CheckBox>(R.id.checkRecordarDatos).isChecked
@@ -73,8 +99,10 @@ class MainActivity : AppCompatActivity() {
 
                 //Retrofit builder
                 val retrofit = Retrofit.Builder()
+                        //Armar la URL
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(URL + "carritos/")
+                        //Cargamos y creamos nuestro objeto retrofit
                     .build()
 
                 //object to call methods
@@ -85,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<CarritosBean>, t: Throwable) {
                         Toast.makeText(
                             this@MainActivity,
-                            "!!LLEGA THO", Toast.LENGTH_LONG
+                            "Ha ocurrido un error.", Toast.LENGTH_LONG
                         ).show()
                     }
 
@@ -93,43 +121,41 @@ class MainActivity : AppCompatActivity() {
                         call: Call<CarritosBean>,
                         response: Response<CarritosBean>
                     ) {
+                        try {
+                             idCarrito = response.body()!!.id
+                             idUsuario = response.body()!!.usuarios?.id
+                            nombre = response.body()!!.usuarios?.nombre
+                             apellido1 = response.body()!!.usuarios?.apellido1
+                             apellido2 = response.body()!!.usuarios?.apellido2
+                             emailDos = response.body()!!.usuarios?.email
+                             //domicilio = response.body()!!.usuarios.
+                             emailDos = response.body()!!.usuarios?.email
+                             estatus = response.body()!!.usuarios?.estatus
+                             sexo = response.body()!!.usuarios?.sexo
+                             idRol = response.body()!!.usuarios?.rol?.id
 
-                        var idCarrito = response.body()!!.id
-                        var idUsuario = response.body()!!.usuarios?.id
-                        var nombre = response.body()!!.usuarios?.nombre
-                        var apellido1 = response.body()!!.usuarios?.apellido1
-                        var apellido2 = response.body()!!.usuarios?.apellido2
-                        var emailDos = response.body()!!.usuarios?.email
-                        var estatus = response.body()!!.usuarios?.estatus
-                        var sexo = response.body()!!.usuarios?.sexo
-                        var idRol = response.body()!!.usuarios?.rol?.id
-
-
-                        b.putString("nombre", nombre)
-                        intent.putExtras(b)
-                        startActivity(intent)
-
-                        Log.e("nombre", nombre)
-                        Log.e("putExtras", b.getString("nombre"))
-
-
-
-                        checkAccess(
-                            idCarrito,
-                            idUsuario,
-                            nombre,
-                            apellido1,
-                            apellido2,
-                            emailDos,
-                            estatus,
-                            sexo,
-                            idRol,
-                            email,
-                            password,
-                            checkBox
-                        )
-
-                        //checkAccess(response.body()!!)
+                            checkAccess(
+                                idCarrito,
+                                idUsuario,
+                                nombre,
+                                apellido1,
+                                apellido2,
+                                emailDos,
+                                estatus,
+                                sexo,
+                                idRol,
+                                email,
+                                password,
+                               // domicilio,
+                               // telefono,
+                                checkBox
+                            )
+                        } catch (e: Exception) {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Contraseña y/o email incorrectos.", Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
                 })
             } catch (e: Exception) {
@@ -137,14 +163,9 @@ class MainActivity : AppCompatActivity() {
                     this@MainActivity,
                     "Ingresa los campos ${e}", Toast.LENGTH_LONG
                 ).show()
-
             }
         }
-
-
-
         btnRegistroCliente.setOnClickListener {
-
             var registroCliente = Intent(this, RegistroCliente::class.java)
             startActivity(registroCliente)
         }
@@ -165,15 +186,7 @@ class MainActivity : AppCompatActivity() {
         password: String,
         recordar: Boolean
     ) {
-
-
         if (email == emailDos){
-
-
-
-
-
-
             when(idRol){
                 1 -> {
                     var editor: SharedPreferences.Editor = sharePreferences.edit()
@@ -187,9 +200,6 @@ class MainActivity : AppCompatActivity() {
                     editor.putString("emailDos", emailDos)
                     editor.putInt("estatus", estatus)
                     editor.putString("sexo", sexo)
-
-
-
                     editor.apply()
                     var gerente = Intent(this, GerenteMenuPrincipal::class.java)
                     startActivity(gerente)
@@ -208,10 +218,6 @@ class MainActivity : AppCompatActivity() {
                     editor.putString("emailDos", emailDos)
                     editor.putInt("estatus", estatus)
                     editor.putString("sexo", sexo)
-
-
-
-
                     editor.apply()
                     var cliente = Intent(this, ClienteMenuPrincipal::class.java)
                     startActivity(cliente)
@@ -225,7 +231,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }else{
-
+            Toast.makeText(
+                this@MainActivity,
+                "Error en el inicio de sesión", Toast.LENGTH_LONG
+            ).show()
         }
 
 

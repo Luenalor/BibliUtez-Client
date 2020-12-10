@@ -31,6 +31,14 @@ class CarritoCompras : AppCompatActivity() {
             startActivity(home)
         }
 
+        btnAccederPerfil.setOnClickListener{
+            var perfil = Intent(this,ClientePerfil::class.java )
+            startActivity(perfil)
+        }
+
+
+
+
 
         //lista de libros
         var listaLibros: List<CarritosLibrosBean> = arrayListOf<CarritosLibrosBean>()

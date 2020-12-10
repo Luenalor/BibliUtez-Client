@@ -43,22 +43,18 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:background="#00FFFFFF"
-
                             android:padding="10dp"
-
                             app:srcCompat="@drawable/home"
                             android:layout_weight="1" />
 
 
                     <ImageButton
-                            android:id="@+id/btnClientePerfil"
+                            android:id="@+id/btnAccederPerfil"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:background="#00FFFFFF"
-
                             android:padding="10dp"
-
                             app:srcCompat="@drawable/user_verde"
                             android:layout_weight="1" />
 

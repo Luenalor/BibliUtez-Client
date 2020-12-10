@@ -38,27 +38,30 @@
     <list default="true" id="a2401421-fe01-4d0c-a1df-670e45505507" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClienteMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClienteMenuPrincipal.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClientePerfil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/ClientePerfil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/GerenteMenuPrincipal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/GerenteMenuPrincipal.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cliente_menu_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cliente_menu_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/RegistroCliente.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/RegistroCliente.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/model/clientes/ClienteJsonPlaceHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/model/clientes/ClienteJsonPlaceHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/carrito_compras.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/carrito_compras.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/cliente_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cliente_perfil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gerente_menu_principal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gerente_menu_principal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_libro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_libro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_libro_cliente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_libro_cliente.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/registro_cliente.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/registro_cliente.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5X_API_28]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_XL_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -95,6 +98,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_XL_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-10T19:57:37.554Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -227,37 +232,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="477" y="266" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1607549403564" />
-    <state x="423" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1607547494527">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607634924662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="423" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607547494527" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607634924662" />
+    <state x="423" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1607642251045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="423" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607642251045" />
     <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607562288906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607562288906" />
+    <state x="206" y="101" width="774" height="840" key="AVDManager" timestamp="1607629468439">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="206" y="101" width="774" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1607629468439" />
     <state x="117" y="306" key="AndroidCreateResourceFileDialog" timestamp="1607562067227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="117" y="306" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607562067227" />
-    <state width="1877" height="350" key="GridCell.Tab.0.bottom" timestamp="1607578717507">
+    <state width="1877" height="349" key="GridCell.Tab.0.bottom" timestamp="1607643152113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607578717507" />
-    <state width="1877" height="350" key="GridCell.Tab.0.center" timestamp="1607578717507">
+    <state width="1877" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607643152113" />
+    <state width="1877" height="349" key="GridCell.Tab.0.center" timestamp="1607643152112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="350" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607578717507" />
-    <state width="1877" height="350" key="GridCell.Tab.0.left" timestamp="1607578717507">
+    <state width="1877" height="349" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607643152112" />
+    <state width="1877" height="349" key="GridCell.Tab.0.left" timestamp="1607643152112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="350" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607578717507" />
-    <state width="1877" height="350" key="GridCell.Tab.0.right" timestamp="1607578717507">
+    <state width="1877" height="349" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607643152112" />
+    <state width="1877" height="349" key="GridCell.Tab.0.right" timestamp="1607643152113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="350" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607578717507" />
+    <state width="1877" height="349" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607643152113" />
     <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1607558190558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607558190558" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1607638261803">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607638261803" />
   </component>
 </project>

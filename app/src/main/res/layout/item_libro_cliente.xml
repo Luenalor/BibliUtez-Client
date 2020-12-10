@@ -189,7 +189,8 @@
                         android:layout_gravity="center|center_horizontal"
                         android:background="#00FFFFFF"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/add"/>
+                        app:srcCompat="@drawable/add"
+                        android:tint="@color/azulUtez" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

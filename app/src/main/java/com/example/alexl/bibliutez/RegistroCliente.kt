@@ -1,5 +1,6 @@
 package com.example.alexl.bibliutez
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -104,7 +105,7 @@ class RegistroCliente : AppCompatActivity() {
                     }
                 })
 
-                /*
+
 
 
 
@@ -138,10 +139,6 @@ class RegistroCliente : AppCompatActivity() {
 
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
                         llenar(response.body()!!)
-                        Toast.makeText(
-                            this@RegistroCliente,
-                            "id: " + id, Toast.LENGTH_LONG
-                        ).show()
                         Handler().postDelayed(
                             {
                                 // This method will be executed once the timer is over
@@ -178,17 +175,20 @@ class RegistroCliente : AppCompatActivity() {
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
                         Toast.makeText(
                             this@RegistroCliente,
-                            "id: " + response.body(), Toast.LENGTH_LONG
+                            "¡Cliente registrado con éxito!", Toast.LENGTH_LONG
                         ).show()
                     }
                 })
-                */
             } catch (e: Exception) {
                 Toast.makeText(
                     this@RegistroCliente,
                     "Estamos teniendo problemas. Vuelve más tarde", Toast.LENGTH_LONG
                 ).show()
             }
+
+
+            var menuPrincipal = Intent(this, MainActivity::class.java)
+            startActivity(menuPrincipal)
         }
 
     }

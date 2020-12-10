@@ -88,10 +88,10 @@
                         android:drawableRight="@drawable/cliente"
                         android:fontFamily="@font/roboto_light"
                         android:gravity="center"
-                        android:text="Bienvenido José Efraín"
                         android:textColor="@color/azulUtez"
                         android:textSize="18sp"
-                        android:textStyle="normal|bold" />
+                        android:textStyle="normal|bold"
+                        android:id="@+id/menuNombreGerente" />
 
 
                 <TextView

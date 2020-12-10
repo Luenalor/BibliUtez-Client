@@ -184,7 +184,7 @@
 
                 <ImageButton
                         android:id="@+id/btnEliminar"
-                        android:layout_width="18dp"
+                        android:layout_width="25dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|center_horizontal"
                         android:background="#00FFFFFF"

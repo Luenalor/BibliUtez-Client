@@ -30,29 +30,25 @@ class ClienteMenuPrincipal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_menu_principal)
         val URL = "http://192.168.1.176:8080/BibliUtez_war/"
-
-        var bundle = intent.extras
-        var nombre = intent.getStringExtra("nombre")
-        if (bundle != null){
-            menuNombreCliente.setText(nombre)
-
-        }else{
-            Toast.makeText(
-                this@ClienteMenuPrincipal,
-                "NULOS", Toast.LENGTH_LONG
-            ).show()
-        }
-
-
-
+        //------------------------------------------
 
         sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        //------------------------------------------
 
+
+        val nombre:String = sharedPreferences.getString("nombre", "test");
+        val apellido1:String = sharedPreferences.getString("apellido1", "test");
+        val apellido2:String = sharedPreferences.getString("apellido2", "test");
+
+        menuNombreCliente.setText("Bienvenido " + nombre + " " + apellido1 + " " + apellido2 )
 
         btnSalirCliente.setOnClickListener {
             val editor : SharedPreferences.Editor = sharedPreferences.edit()
             editor.clear()
             editor.apply()
+
+            //------------------------------------------
+
 
             var logOut = Intent(this, MainActivity::class.java)
             startActivity(logOut)
