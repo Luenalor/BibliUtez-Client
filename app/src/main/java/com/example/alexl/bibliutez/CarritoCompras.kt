@@ -21,6 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CarritoCompras : AppCompatActivity() {
 
     lateinit var sharedPreferences: SharedPreferences
+    var adapterCarrito: AdapterCarrito? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,24 +31,24 @@ class CarritoCompras : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
-        val idCarrito:Int = sharedPreferences.getInt("idCarrito", 0);
+        val idCarrito: Int = sharedPreferences.getInt("idCarrito", 0);
 
 
 
 
-        btnHomeCliente.setOnClickListener{
-            var home = Intent(this,ClienteMenuPrincipal::class.java )
+        btnHomeCliente.setOnClickListener {
+            var home = Intent(this, ClienteMenuPrincipal::class.java)
             startActivity(home)
         }
 
-        btnAccederPerfil.setOnClickListener{
-            var perfil = Intent(this,ClientePerfil::class.java )
+        btnAccederPerfil.setOnClickListener {
+            var perfil = Intent(this, ClientePerfil::class.java)
             startActivity(perfil)
         }
 
 
-        btnHistorialCompras.setOnClickListener{
-            var perfil = Intent(this,ClienteHistorial::class.java )
+        btnHistorialCompras.setOnClickListener {
+            var perfil = Intent(this, ClienteHistorial::class.java)
             startActivity(perfil)
         }
 
@@ -59,19 +60,23 @@ class CarritoCompras : AppCompatActivity() {
         //Retrofit builder
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(URL+"carritos_libros/")
+            .baseUrl(URL + "carritos_libros/")
             .build()
 
         //object to call methods
         val jsonPlaceHolderApi = retrofit.create(CarritosLibrosJsonPlaceHolder::class.java)
-        val mycall: Call<ArrayList<CarritosLibrosBean>> = jsonPlaceHolderApi.carritosLibrosFindCarrito(idCarrito)
+        val mycall: Call<ArrayList<CarritosLibrosBean>> =
+            jsonPlaceHolderApi.carritosLibrosFindCarrito(idCarrito)
 
         mycall.enqueue(object : Callback<ArrayList<CarritosLibrosBean>> {
             override fun onFailure(call: Call<ArrayList<CarritosLibrosBean>>, t: Throwable) {
-                Log.e("onFailure!!!!!",t.message.toString())
+                Log.e("onFailure!!!!!", t.message.toString())
             }
 
-            override fun onResponse(call: Call<ArrayList<CarritosLibrosBean>>, response: Response<ArrayList<CarritosLibrosBean>>) {
+            override fun onResponse(
+                call: Call<ArrayList<CarritosLibrosBean>>,
+                response: Response<ArrayList<CarritosLibrosBean>>
+            ) {
                 listaLibros = response.body()!!
                 rclv_carrito.layoutManager = manager
                 llenar(listaLibros, rclv_carrito)
@@ -80,10 +85,11 @@ class CarritoCompras : AppCompatActivity() {
         })
 
     }
-    fun llenar(listaLibros:ArrayList<CarritosLibrosBean>, recyclerView: RecyclerView){
-        var adapter = AdapterCarrito(this, listaLibros)
-        rclv_carrito.adapter = adapter
-        adapter.notifyDataSetChanged()
+
+    fun llenar(listaLibros: ArrayList<CarritosLibrosBean>, recyclerView: RecyclerView) {
+        adapterCarrito = AdapterCarrito(this, listaLibros)
+        rclv_carrito.adapter = adapterCarrito
+        adapterCarrito!!.notifyDataSetChanged()
 
     }
 }

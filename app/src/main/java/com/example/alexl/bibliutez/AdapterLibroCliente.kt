@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.carritos.CarritosJsonPlaceHolder
+import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosBean
+import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.roles.RolesBean
 import com.example.alexl.bibliutez.model.usuarios.UsuariosBean
@@ -131,17 +133,18 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
                     //Retrofit builder
                     val retrofit = Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl(URL + "carritos/")
+                        .baseUrl(URL + "carritos_libros/")
                         .build()
 
                     var roles: RolesBean = RolesBean(idRol, "")
                     var usuario: UsuariosBean = UsuariosBean(idUsuario, nombreCliente, apellido1, apellido2, emailDos, 1, sexo,  roles,
                         "")
                     var carrito : CarritosBean = CarritosBean(idCarrito, usuario)
+                    var carritoLibros : CarritosLibrosBean = CarritosLibrosBean(0, carrito, libros, 1 )
 
                     //object to call methods
-                    val jsonPlaceHolderApi = retrofit.create(CarritosJsonPlaceHolder::class.java)
-                    val mycall: Call<Int> = jsonPlaceHolderApi.carritosLibrosAdd(carrito)
+                    val jsonPlaceHolderApi = retrofit.create(CarritosLibrosJsonPlaceHolder::class.java)
+                    val mycall: Call<Int> = jsonPlaceHolderApi.carritosLibrosAdd(carritoLibros)
                     mycall.enqueue(object : Callback<Int> {
                         override fun onFailure(call: Call<Int>, t: Throwable) {
                             Toast.makeText(

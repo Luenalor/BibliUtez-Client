@@ -27,7 +27,7 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
 
     // inflar = Crear elementos bajo un diseño predefinido
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        var carrito_view = LayoutInflater.from(context).inflate(R.layout.item_carrito, p0, false)
+        var carrito_view = LayoutInflater.from(p0.context).inflate(R.layout.item_carrito, p0, false)
         return ViewHolder(carrito_view)
     }
 
@@ -36,7 +36,7 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
         return carrito.size
     }
 
-    override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
+    override fun onBindViewHolder(p0: AdapterCarrito.ViewHolder, p1: Int) {
         p0.rellenarVista(carrito[p1])
     }
 
@@ -52,8 +52,8 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
 
             val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
-            var nombre = itemView.findViewById(R.id.historialTitulo) as TextView
-            var precio = itemView.findViewById(R.id.historialPrecio) as TextView
+            var nombre = itemView.findViewById(R.id.historialTituloCarrito) as TextView
+            var precio = itemView.findViewById(R.id.historialPrecioCarrito) as TextView
             var btn_Eliminar = itemView.findViewById(R.id.btn_eliminar_libro) as Button
 
             nombre.text = carrito.libros.nombre

@@ -45,9 +45,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterCarrito.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterCarrito.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterLibroCliente.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/AdapterLibroCliente.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/CarritoCompras.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/model/carritos_libros/CarritosLibrosJsonPlaceHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/alexl/bibliutez/model/carritos_libros/CarritosLibrosJsonPlaceHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_carrito.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_carrito.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,22 +247,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="600" y="375" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607652798981" />
-    <state width="1877" height="391" key="GridCell.Tab.0.bottom" timestamp="1607665254998">
+    <state width="1877" height="391" key="GridCell.Tab.0.bottom" timestamp="1607667346979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607665254998" />
-    <state width="1877" height="391" key="GridCell.Tab.0.center" timestamp="1607665254998">
+    <state width="1877" height="391" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607667346979" />
+    <state width="1877" height="391" key="GridCell.Tab.0.center" timestamp="1607667346979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607665254998" />
-    <state width="1877" height="391" key="GridCell.Tab.0.left" timestamp="1607665254998">
+    <state width="1877" height="391" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607667346979" />
+    <state width="1877" height="391" key="GridCell.Tab.0.left" timestamp="1607667346979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607665254998" />
-    <state width="1877" height="391" key="GridCell.Tab.0.right" timestamp="1607665254998">
+    <state width="1877" height="391" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607667346979" />
+    <state width="1877" height="391" key="GridCell.Tab.0.right" timestamp="1607667346979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607665254998" />
+    <state width="1877" height="391" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607667346979" />
     <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1607654338642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
