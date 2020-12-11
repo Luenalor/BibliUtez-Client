@@ -59,12 +59,12 @@
                             android:layout_weight="1" />
 
                     <ImageButton
-                            android:id="@+id/btnCarritoCompras"
+                            android:id="@+id/btnHistorialCompras"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="#00FFFFFF"
                             android:padding="10dp"
-                            app:srcCompat="@drawable/carrito"
+                            app:srcCompat="@drawable/historial_icon"
                             android:layout_weight="1" />
                 </LinearLayout>
 

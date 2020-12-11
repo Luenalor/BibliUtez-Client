@@ -2,27 +2,28 @@ package com.example.alexl.bibliutez
 
 import android.content.Context
 import android.content.Intent
+import android.preference.PreferenceManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosBean
 import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosJsonPlaceHolder
-import com.example.alexl.bibliutez.model.libros.LibrosBean
-import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class AdapterCarrito (var context: Context, var carrito: List<CarritosLibrosBean>) :
+
+class AdapterCarrito(var context: Context, var carrito: List<CarritosLibrosBean>) :
 
     RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
+
+
 
     // inflar = Crear elementos bajo un diseño predefinido
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -42,10 +43,17 @@ class AdapterCarrito (var context: Context, var carrito: List<CarritosLibrosBean
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun rellenarVista(carrito: CarritosLibrosBean) {
 
+            val preference = itemView.context.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+            var idCarrito = preference.getInt("idCarrito", 0)
+            Toast.makeText(
+                context,
+                "idRol" + idCarrito, Toast.LENGTH_LONG
+            ).show()
+
             val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
-            var nombre = itemView.findViewById(R.id.ct_nombre) as TextView
-            var precio = itemView.findViewById(R.id.ct_precio) as TextView
+            var nombre = itemView.findViewById(R.id.historialTitulo) as TextView
+            var precio = itemView.findViewById(R.id.historialPrecio) as TextView
             var btn_Eliminar = itemView.findViewById(R.id.btn_eliminar_libro) as Button
 
             nombre.text = carrito.libros.nombre
@@ -62,12 +70,12 @@ class AdapterCarrito (var context: Context, var carrito: List<CarritosLibrosBean
                 var ventana = android.app.AlertDialog.Builder(context)
                 ventana.setTitle("Carrito")
                 ventana.setMessage("¿Estás seguro de eliminar el libro?")
-                ventana.setPositiveButton("Si"){ventana, id->
+                ventana.setPositiveButton("Si"){ ventana, id->
 
                     //Retrofit builder
                     val retrofit = Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl(URL+"carritos_libros/")
+                        .baseUrl(URL + "carritos_libros/")
                         .build()
 
                     //object to call methods
@@ -88,7 +96,7 @@ class AdapterCarrito (var context: Context, var carrito: List<CarritosLibrosBean
 
                     })
                 }
-                ventana.setNegativeButton("No"){ventana, id->
+                ventana.setNegativeButton("No"){ ventana, id->
                     ventana.dismiss()
                 }
                 ventana.show()

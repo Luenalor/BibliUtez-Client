@@ -8,7 +8,7 @@
 
         android:layout_gravity="right"
         android:background="@drawable/background"
-        tools:context=".ClienteMenuPrincipal">
+        tools:context=".ClienteHistorial">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -102,8 +102,10 @@
 
 
                 <TextView
-                        android:id="@+id/menuNombreCliente"
+                        android:id="@+id/historialNombreCliente"
                         android:layout_width="match_parent"
+                        android:text="Historial de compras"
+
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/tinybibli"
                         android:drawableRight="@drawable/libros2"
@@ -111,16 +113,6 @@
                         android:gravity="center"
                         android:textColor="@color/azulUtez"
                         android:textSize="18sp"
-                        android:textStyle="normal|bold" />
-
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:gravity="center"
-                        android:text="Catalogo de libros"
-                        android:textColor="@color/azulUtez"
-                        android:textSize="16sp"
                         android:textStyle="normal|bold" />
 
                 <View
@@ -138,7 +130,7 @@
 
                     <android.support.v7.widget.RecyclerView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:id="@+id/cl_rcvLibros"/>
+                            android:layout_height="match_parent" android:id="@+id/rclv_historial"/>
                 </LinearLayout>
 
             </LinearLayout>

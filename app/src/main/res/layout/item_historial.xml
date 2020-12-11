@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:id="@+id/Degradado"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+
+        android:layout_height="wrap_content">
+
+
+
+    <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/verdeUtez"
+            android:layout_margin="5dp"
+            android:id="@+id/cardViewHistorial"
+            app:cardBackgroundColor="#00002E60">
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:layout_marginBottom="10dp">
+
+            <TableRow
+                    android:layout_width="wrap_content"
+                    android:background="@color/verdeUtez">
+
+                <TextView
+                        android:layout_width="77dp"
+                        android:layout_column="0"
+                        android:gravity="center_horizontal"
+                        android:padding="3dip"
+                        android:text="Imagen"
+                        android:textColor="@android:color/white" />
+
+                <TextView
+                        android:layout_width="116dp"
+                        android:layout_column="1"
+                        android:gravity="center_horizontal"
+                        android:padding="3dip"
+                        android:text="Titulo"
+                        android:textColor="@android:color/white" />
+
+                <TextView
+                        android:layout_width="116dp"
+                        android:layout_column="1"
+                        android:gravity="center_horizontal"
+                        android:padding="3dip"
+                        android:text="Autor"
+                        android:textColor="@android:color/white"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3" />
+
+                <TextView
+                        android:layout_column="2"
+                        android:gravity="center_horizontal"
+                        android:padding="3dip"
+
+                        android:text="Precio"
+                        android:textColor="@android:color/white" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="276dp"
+                    android:background="@color/azulTransp">
+
+                <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/libro1" />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/historialTitulo"
+                        android:layout_height="80dp"
+                        android:layout_column="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:padding="3dip"
+                        android:text="El Libro del Crimen"
+                        android:textColor="@android:color/white" />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/historialAutor"
+                        android:layout_height="80dp"
+                        android:layout_column="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:padding="3dip"
+                        android:text="Vall Jhon"
+                        android:textColor="@android:color/white" />
+
+                <TextView
+                        android:id="@+id/historialPrecio"
+                        android:layout_height="80dp"
+                        android:layout_column="2"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:padding="3dip"
+                        android:text="$399"
+
+                        android:textColor="@android:color/white" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:background="@color/whiteTransp" />
+
+        </TableLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

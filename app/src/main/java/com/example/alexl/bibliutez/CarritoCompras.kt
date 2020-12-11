@@ -8,11 +8,8 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosBean
 import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosJsonPlaceHolder
-import com.example.alexl.bibliutez.model.libros.LibrosBean
-import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.carrito_compras.*
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
-import kotlinx.android.synthetic.main.gerente_lista_libros.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,6 +32,13 @@ class CarritoCompras : AppCompatActivity() {
             var perfil = Intent(this,ClientePerfil::class.java )
             startActivity(perfil)
         }
+
+
+        btnHistorialCompras.setOnClickListener{
+            var perfil = Intent(this,ClienteHistorial::class.java )
+            startActivity(perfil)
+        }
+
 
 
 

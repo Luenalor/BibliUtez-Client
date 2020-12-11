@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.Menu
-import android.widget.Toast
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
@@ -62,7 +61,7 @@ class ClienteMenuPrincipal : AppCompatActivity() {
             startActivity(clientePerfil)
         }
 
-        btnCarritoCompras.setOnClickListener{
+        btnHistorail.setOnClickListener{
             var CarritoCompras = Intent(this, CarritoCompras::class.java)
             startActivity(CarritoCompras)
         }

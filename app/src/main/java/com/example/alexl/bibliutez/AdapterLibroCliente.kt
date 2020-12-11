@@ -11,6 +11,8 @@ import android.widget.*
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.carritos.CarritosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.libros.LibrosBean
+import com.example.alexl.bibliutez.model.roles.RolesBean
+import com.example.alexl.bibliutez.model.usuarios.UsuariosBean
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -82,8 +84,19 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun rellenarVista(libros: LibrosBean) {
 
+            val preference = itemView.context.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+            var idCarrito = preference.getInt("idCarrito", 0)
 
-
+            val nombreCliente:String = preference.getString("nombre", "No Aplica.");
+            val apellido1:String = preference.getString("apellido1", "No Aplica.");
+            val apellido2:String = preference.getString("apellido2", "No Aplica.");
+            val emailDos:String = preference.getString("emailDos", "No Aplica.");
+            val sexo:String = preference.getString("sexo", "No Aplica.");
+            val idUsuario:Int = preference.getInt("idUsuario", 0);
+            val idRol:Int = preference.getInt("idRol", 0);
+            var clienteFechaNacimiento: String = ""
+            var clienteDomicilio: String = ""
+            var clienteCelular: String = ""
 
 
             val URL = "http://192.168.1.176:8080/BibliUtez_war/"
@@ -112,7 +125,7 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
             btnAgregar.setOnClickListener {
                 var ventana = android.app.AlertDialog.Builder(context)
                 ventana.setTitle("Agregar")
-                ventana.setMessage("¿Estás seguro de agregar al carriro este libro?")
+                ventana.setMessage("¿Estás seguro de agregar al carrito este libro?")
                 ventana.setPositiveButton("Si") { ventana, id ->
 
                     //Retrofit builder
@@ -121,18 +134,23 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
                         .baseUrl(URL + "carritos/")
                         .build()
 
+                    var roles: RolesBean = RolesBean(idRol, "")
+                    var usuario: UsuariosBean = UsuariosBean(idUsuario, nombreCliente, apellido1, apellido2, emailDos, 1, sexo,  roles,
+                        "")
+                    var carrito : CarritosBean = CarritosBean(idCarrito, usuario)
+
                     //object to call methods
                     val jsonPlaceHolderApi = retrofit.create(CarritosJsonPlaceHolder::class.java)
-                    val mycall: Call<CarritosBean> = jsonPlaceHolderApi.carritosFindOne(1)
-                    mycall.enqueue(object : Callback<CarritosBean> {
-                        override fun onFailure(call: Call<CarritosBean>, t: Throwable) {
+                    val mycall: Call<Int> = jsonPlaceHolderApi.carritosLibrosAdd(carrito)
+                    mycall.enqueue(object : Callback<Int> {
+                        override fun onFailure(call: Call<Int>, t: Throwable) {
                             Toast.makeText(
                                 context,
                                 "Estamos teniendo problemas para conectarte", Toast.LENGTH_LONG
                             ).show()
                         }
 
-                        override fun onResponse(call: Call<CarritosBean>, response: Response<CarritosBean>) {
+                        override fun onResponse(call: Call<Int>, response: Response<Int>) {
                             Toast.makeText(
                                 context,
                                 "El libro se agregó al carrito"+response.body()!!, Toast.LENGTH_LONG
