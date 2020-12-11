@@ -2,6 +2,7 @@ package com.example.alexl.bibliutez
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
     init {
         librosFiltrerCliente = libros
     }
+
 
 
     override fun getFilter(): Filter {
@@ -62,6 +64,8 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
     // inflar = Crear elementos bajo un diseño predefinido
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         var libros_view = LayoutInflater.from(p0.context).inflate(R.layout.item_libro_cliente, p0, false)
+
+
         return ViewHolder(libros_view)
     }
 
@@ -72,10 +76,15 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
 
     override fun onBindViewHolder(p0: AdapterLibroCliente.ViewHolder, p1: Int) {
         p0.rellenarVista(librosFiltrerCliente[p1])
+
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun rellenarVista(libros: LibrosBean) {
+
+
+
+
 
             val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
