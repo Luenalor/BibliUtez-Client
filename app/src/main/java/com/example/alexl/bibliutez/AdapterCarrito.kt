@@ -19,9 +19,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class AdapterCarrito(var context: Context, var carrito: List<CarritosLibrosBean>) :
-
+class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibrosBean>) :
     RecyclerView.Adapter<AdapterCarrito.ViewHolder>() {
+
 
 
 

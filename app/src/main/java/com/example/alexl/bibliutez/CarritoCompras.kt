@@ -1,6 +1,8 @@
 package com.example.alexl.bibliutez
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -17,10 +19,20 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class CarritoCompras : AppCompatActivity() {
+
+    lateinit var sharedPreferences: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.carrito_compras)
         val URL = "http://192.168.1.176:8080/BibliUtez_war/"
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+
+        val idCarrito:Int = sharedPreferences.getInt("idCarrito", 0);
+
+
 
 
         btnHomeCliente.setOnClickListener{
@@ -40,12 +52,7 @@ class CarritoCompras : AppCompatActivity() {
         }
 
 
-
-
-
-
-        //lista de libros
-        var listaLibros: List<CarritosLibrosBean> = arrayListOf<CarritosLibrosBean>()
+        var listaLibros: ArrayList<CarritosLibrosBean> = arrayListOf<CarritosLibrosBean>()
         var manager = LinearLayoutManager(this)
 
 
@@ -57,14 +64,14 @@ class CarritoCompras : AppCompatActivity() {
 
         //object to call methods
         val jsonPlaceHolderApi = retrofit.create(CarritosLibrosJsonPlaceHolder::class.java)
-        val mycall: Call<List<CarritosLibrosBean>> = jsonPlaceHolderApi.carritosLibrosFindCarrito(1)
+        val mycall: Call<ArrayList<CarritosLibrosBean>> = jsonPlaceHolderApi.carritosLibrosFindCarrito(idCarrito)
 
-        mycall.enqueue(object : Callback<List<CarritosLibrosBean>> {
-            override fun onFailure(call: Call<List<CarritosLibrosBean>>, t: Throwable) {
+        mycall.enqueue(object : Callback<ArrayList<CarritosLibrosBean>> {
+            override fun onFailure(call: Call<ArrayList<CarritosLibrosBean>>, t: Throwable) {
                 Log.e("onFailure!!!!!",t.message.toString())
             }
 
-            override fun onResponse(call: Call<List<CarritosLibrosBean>>, response: Response<List<CarritosLibrosBean>>) {
+            override fun onResponse(call: Call<ArrayList<CarritosLibrosBean>>, response: Response<ArrayList<CarritosLibrosBean>>) {
                 listaLibros = response.body()!!
                 rclv_carrito.layoutManager = manager
                 llenar(listaLibros, rclv_carrito)
@@ -73,7 +80,7 @@ class CarritoCompras : AppCompatActivity() {
         })
 
     }
-    fun llenar(listaLibros:List<CarritosLibrosBean>, recyclerView: RecyclerView){
+    fun llenar(listaLibros:ArrayList<CarritosLibrosBean>, recyclerView: RecyclerView){
         var adapter = AdapterCarrito(this, listaLibros)
         rclv_carrito.adapter = adapter
         adapter.notifyDataSetChanged()

@@ -13,7 +13,7 @@ interface CarritosLibrosJsonPlaceHolder {
     fun carritosLibrosFindOne(@Query("id") id: Int): Call<CarritosLibrosBean>
 
     @GET("findCarrito")
-    fun carritosLibrosFindCarrito(@Query("id") id: Int): Call<List<CarritosLibrosBean>>
+    fun carritosLibrosFindCarrito(@Query("id") id: Int): Call<ArrayList<CarritosLibrosBean>>
 
     @POST("add")
     fun carritosLibrosAdd(@Body usuario: CarritosLibrosBean): Call<Int>
