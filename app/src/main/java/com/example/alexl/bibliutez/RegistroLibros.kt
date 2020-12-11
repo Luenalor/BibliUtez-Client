@@ -128,7 +128,7 @@ class RegistroLibros : AppCompatActivity() {
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
                         Toast.makeText(
                             this@RegistroLibros,
-                            "Agregado correctamente"+response.body(), Toast.LENGTH_LONG
+                            "Agregado correctamente", Toast.LENGTH_LONG
                         ).show()
                     }
                 })

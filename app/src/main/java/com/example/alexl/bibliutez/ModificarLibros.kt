@@ -40,21 +40,21 @@ class ModificarLibros : AppCompatActivity() {
         var sp_categoria_posicion: Int = 1
         var categoria: CategoriasBean = CategoriasBean(0, "")
         sp_categoria.onItemSelectedListener =
-                object : AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                        sp_categoria_posicion = position + 1
-
-                    }
-
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-                        TODO("Not yet implemented")
-                    }
-
-                    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                        TODO("Not yet implemented")
-                    }
+            object : AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    sp_categoria_posicion = position + 1
 
                 }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    TODO("Not yet implemented")
+                }
+
+            }
 
         //Llenar categoria
         fun llenar(categoriasBean: CategoriasBean) {
@@ -93,6 +93,7 @@ class ModificarLibros : AppCompatActivity() {
                 val input3 = findViewById(R.id.txtModificarLibroStock) as EditText
                 val stock = Integer.parseInt((input3.text.toString()))
 
+                val categoriaSpinner: CategoriasBean = CategoriasBean(sp_categoria_posicion)
 
 
                 val newBook: LibrosBean = LibrosBean(
@@ -100,7 +101,7 @@ class ModificarLibros : AppCompatActivity() {
                     titulo,
                     editorial,
                     autor,
-                    categoria,
+                    categoriaSpinner,
                     precio,
                     num_pag,
                     stock

@@ -8,10 +8,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.example.alexl.bibliutez.model.carritos_libros.CarritosLibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosBean
 import com.example.alexl.bibliutez.model.libros.LibrosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.transacciones.TransaccionesBean
 import com.example.alexl.bibliutez.model.transacciones.TransaccionesJsonPlaceHolder
+import kotlinx.android.synthetic.main.carrito_compras.*
 import kotlinx.android.synthetic.main.cliente_historial.*
 import kotlinx.android.synthetic.main.gerente_lista_libros.*
 import retrofit2.Call
@@ -31,20 +33,13 @@ class ClienteHistorial : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cliente_historial)
 
-        val recyclerView:RecyclerView = findViewById(R.id.rclv_historial)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-        var historialIdk = ArrayList<TransaccionesBean>()
-
-
         val URL = "http://192.168.1.176:8080/BibliUtez_war/"
         sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
         val idCarrito: Int = sharedPreferences.getInt("idCarrito", 1);
 
-
-        //var manager = LinearLayoutManager(this)
-
-
+        var listaHistorial: ArrayList<TransaccionesBean> = arrayListOf<TransaccionesBean>()
+        var manager = LinearLayoutManager(this)
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(URL + "transacciones/")
@@ -58,9 +53,9 @@ class ClienteHistorial : AppCompatActivity() {
                 call: Call<ArrayList<TransaccionesBean>>,
                 response: Response<ArrayList<TransaccionesBean>>
             ) {
-                historialIdk = response.body()!!
-                    rclv_historial.layoutManager = recyclerView.layoutManager
-                    llenar(historialIdk, rclv_historial)
+               listaHistorial = response.body()!!
+                rclv_historial.layoutManager = manager
+                llenar(listaHistorial, rclv_historial)
                 Toast.makeText(
                     this@ClienteHistorial,
                     "Ha ocurrido uasdasfn error.", Toast.LENGTH_LONG
@@ -79,9 +74,9 @@ class ClienteHistorial : AppCompatActivity() {
     }
 
     fun llenar(historialIdk: ArrayList<TransaccionesBean>, recyclerView: RecyclerView) {
-
-        val adapter = AdapterHistorial(historialIdk)
-        recyclerView.adapter = adapter
+        adapterHistorial = AdapterHistorial(this, historialIdk)
+        rclv_historial.adapter = adapterHistorial
+        adapterHistorial!!.notifyDataSetChanged()
 
 
     }

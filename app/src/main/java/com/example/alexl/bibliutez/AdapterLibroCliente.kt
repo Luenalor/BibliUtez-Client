@@ -156,7 +156,7 @@ class AdapterLibroCliente(var context: Context, var libros: ArrayList<LibrosBean
                         override fun onResponse(call: Call<Int>, response: Response<Int>) {
                             Toast.makeText(
                                 context,
-                                "El libro se agregó al carrito"+response.body()!!, Toast.LENGTH_LONG
+                                "El libro se agregó al carrito", Toast.LENGTH_LONG
                             ).show()
                             notifyDataSetChanged()
                         }
