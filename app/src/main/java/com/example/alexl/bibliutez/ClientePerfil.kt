@@ -4,12 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import com.example.alexl.bibliutez.model.carritos.CarritosBean
 import com.example.alexl.bibliutez.model.carritos.CarritosJsonPlaceHolder
 import com.example.alexl.bibliutez.model.clientes.ClienteJsonPlaceHolder
 import com.example.alexl.bibliutez.model.clientes.ClientesBean
 import com.example.alexl.bibliutez.model.roles.RolesBean
 import com.example.alexl.bibliutez.model.usuarios.UsuariosBean
+import com.example.alexl.bibliutez.model.usuarios.UsuariosJsonPlaceHolder
 import kotlinx.android.synthetic.main.cliente_menu_principal.*
 import kotlinx.android.synthetic.main.cliente_perfil.*
 import retrofit2.Call
@@ -23,13 +26,9 @@ import java.util.*
 
 class ClientePerfil : AppCompatActivity() {
 
-
     lateinit var sharedPreferences: SharedPreferences
 
 
-    var rol : RolesBean = RolesBean(0, "")
-    var usuarios: UsuariosBean = UsuariosBean(0, "", "", "", "", 0, "", rol, "")
-    var cliente: ClientesBean = ClientesBean(0, "", "", usuarios, "")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +45,9 @@ class ClientePerfil : AppCompatActivity() {
         val apellido1:String = sharedPreferences.getString("apellido1", "No Aplica.");
         val apellido2:String = sharedPreferences.getString("apellido2", "No Aplica.");
         val emailDos:String = sharedPreferences.getString("emailDos", "No Aplica.");
+        val sexo:String = sharedPreferences.getString("sexo", "No Aplica.");
         val idUsuario:Int = sharedPreferences.getInt("idUsuario", 0);
+        val idRol:Int = sharedPreferences.getInt("idRol", 0);
         var clienteFechaNacimiento: String = ""
         var clienteDomicilio: String = ""
         var clienteCelular: String = ""
@@ -70,7 +71,7 @@ class ClientePerfil : AppCompatActivity() {
         mycall.enqueue(object : Callback <ClientesBean>{
             override fun onResponse(call: Call<ClientesBean>, response: Response<ClientesBean>) {
                 try {
-                    fillCliente(response.body()!!)
+
                     clienteFechaNacimiento = response.body()!!.fecha_nacimiento
                     clienteDomicilio = response.body()!!.domicilio
                     clienteCelular = response.body()!!.telefono
@@ -88,13 +89,50 @@ class ClientePerfil : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ClientesBean>, t: Throwable) {
-
             }
         })
-    }
 
-    fun fillCliente(clienteFill: ClientesBean){
-        cliente = clienteFill;
-    }
+        cambiarPass.setOnClickListener {
 
+            var txtPasswordChange = findViewById<TextView>(R.id.txtPasswordChange).text.toString()
+            var roles: RolesBean = RolesBean(idRol, "")
+            var usuario: UsuariosBean = UsuariosBean(idUsuario, nombre, apellido1, apellido2, emailDos, 1, sexo,  roles,
+                txtPasswordChange
+            )
+
+
+
+            val retrofit = Retrofit.Builder()
+                //Armar la URL
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(URL + "usuarios/")
+                //Cargamos y creamos nuestro objeto retrofit
+                .build()
+
+            val jsonPlaceHolderApi = retrofit.create(UsuariosJsonPlaceHolder::class.java)
+            val mycall: Call<Boolean> = jsonPlaceHolderApi.updatePassword(usuario)
+
+            mycall.enqueue(object : Callback<Boolean>{
+                override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                    Toast.makeText(
+                        this@ClientePerfil,
+                        "Contraseña modificada con exito.", Toast.LENGTH_LONG
+                    ).show()
+
+                    var txtClear = findViewById<TextView>(R.id.txtPasswordChange)
+                    txtClear.setText("")
+                }
+
+                override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                    Toast.makeText(
+                        this@ClientePerfil,
+                        "Ha ocurrido un error.", Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
+
+        }
+
+
+    }
 }

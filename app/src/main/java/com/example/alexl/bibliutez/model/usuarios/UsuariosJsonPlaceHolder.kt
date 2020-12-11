@@ -18,5 +18,8 @@ interface UsuariosJsonPlaceHolder {
     @DELETE("delete/{id}")
     fun usuariosDelete(@Path("id") id:Int): Call<Boolean>
 
+    @PUT("updatePassword")
+    fun updatePassword(@Body usuario: UsuariosBean): Call<Boolean>
+
 
 }

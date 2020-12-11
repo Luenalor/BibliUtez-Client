@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
             try {
 
                 val email = findViewById<EditText>(R.id.correoElectronico).text.toString()
-                val password = findViewById<EditText>(R.id.password).text.toString()
+                val password = findViewById<EditText>(R.id.txtPasswordChange).text.toString()
 
                 //Retrofit builder
                 val retrofit = Retrofit.Builder()
