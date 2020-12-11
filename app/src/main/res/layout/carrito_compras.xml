@@ -79,7 +79,7 @@
             <LinearLayout
                     android:id="@+id/MainLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
@@ -160,22 +160,14 @@
 
 
                             <TextView
-                                    android:layout_width="262dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_column="1"
-                                    android:gravity="right"
-                                    android:padding="3dip"
-                                    android:text="Subtotal:"
-                                    android:textColor="@android:color/white" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_column="2"
+                                    android:layout_column="1"
                                     android:gravity="center_horizontal"
                                     android:padding="3dip"
-                                    android:text="$789"
-                                    android:textColor="@android:color/white" />
+                                    android:textColor="@android:color/white"
+                                    android:id="@+id/domicilioCarrito"
+                                    android:text="asdasdas das da s das da sadas as" />
                         </TableRow>
 
                         <TableRow
@@ -200,9 +192,9 @@
                                     android:layout_column="2"
                                     android:gravity="center_horizontal"
                                     android:padding="3dip"
-                                    android:text="$789"
                                     android:textColor="@android:color/white"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    android:id="@+id/cantidadTotal" />
                         </TableRow>
                     </TableLayout>
                 </LinearLayout>
@@ -213,7 +205,7 @@
                         android:orientation="vertical">
 
                     <Button
-                            android:id="@+id/btnRegistroLibro"
+                            android:id="@+id/btnFinalizarCompra"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="2"

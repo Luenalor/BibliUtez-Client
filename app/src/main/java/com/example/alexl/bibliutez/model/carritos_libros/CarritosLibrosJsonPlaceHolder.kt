@@ -24,5 +24,8 @@ interface CarritosLibrosJsonPlaceHolder {
     @DELETE("delete/{id}")
     fun carritosLibrosDelete(@Path("id") id: Int): Call<Boolean>
 
+    @DELETE("deleteCarrito/{id}")
+    fun deleteCarrito(@Path("id") id: Int): Call<Boolean>
+
 
 }

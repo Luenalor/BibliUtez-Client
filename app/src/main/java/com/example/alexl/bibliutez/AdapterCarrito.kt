@@ -3,6 +3,7 @@ package com.example.alexl.bibliutez
 import android.content.Context
 import android.content.Intent
 import android.preference.PreferenceManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -45,10 +46,7 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
 
             val preference = itemView.context.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
             var idCarrito = preference.getInt("idCarrito", 0)
-            Toast.makeText(
-                context,
-                "idRol" + idCarrito, Toast.LENGTH_LONG
-            ).show()
+
 
             val URL = "http://192.168.1.176:8080/BibliUtez_war/"
 
@@ -65,6 +63,9 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
                 verLibro.putExtra("verLibro", verLibro)
                 context.startActivity(verLibro)
             }
+
+
+
 
             btn_Eliminar.setOnClickListener{
                 var ventana = android.app.AlertDialog.Builder(context)
@@ -91,7 +92,11 @@ class AdapterCarrito(var context: Context, var carrito: ArrayList<CarritosLibros
                                 context,
                                 "El libro se eliminó", Toast.LENGTH_LONG
                             ).show()
-                            notifyDataSetChanged()
+
+
+
+                            var adapterCarrito: AdapterCarrito = this@AdapterCarrito
+                            adapterCarrito!!.notifyDataSetChanged()
                         }
 
                     })

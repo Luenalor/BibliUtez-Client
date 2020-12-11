@@ -43,6 +43,7 @@ class RegistroCliente : AppCompatActivity() {
         var telefono = ""
         var domicilio = ""
         var password = ""
+        var usuariosBean: UsuariosBean = UsuariosBean(0,  nombre, apellido1, apellido2, email, 1, sp_option, rol, password);
 
         sp_sexo.onItemSelectedListener =
                 object : AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
@@ -65,7 +66,10 @@ class RegistroCliente : AppCompatActivity() {
                 }
 
         fun llenar(idUser: Int) {
-            id = idUser
+            usuariosBean.id = idUser
+
+            //Cliente Object
+
 
         }
 
@@ -97,7 +101,6 @@ class RegistroCliente : AppCompatActivity() {
                 val mycall: Call<RolesBean> = rolesJson.rolesFindOne(2)
                 mycall.enqueue(object : Callback<RolesBean> {
                     override fun onFailure(call: Call<RolesBean>, t: Throwable) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                     }
 
                     override fun onResponse(call: Call<RolesBean>, response: Response<RolesBean>) {
@@ -123,41 +126,29 @@ class RegistroCliente : AppCompatActivity() {
                 )
 
                 //Retrofit builder
-                val retrofit3 = Retrofit.Builder()
+                val clientesRetrofit = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(URL + "usuarios/")
                     .build()
 
 
                 //object to call methods
-                val jsonPlaceHolderApi3 = retrofit3.create(UsuariosJsonPlaceHolder::class.java)
-                val call: Call<Int> = jsonPlaceHolderApi3.usuariosAdd(usuariosBean)
+                val clientesJson = clientesRetrofit.create(UsuariosJsonPlaceHolder::class.java)
+                val call: Call<Int> = clientesJson.usuariosAdd(usuariosBean)
                 call.enqueue(object : Callback<Int> {
                     override fun onFailure(call: Call<Int>, t: Throwable) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
                     }
 
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
                         llenar(response.body()!!)
-                        Handler().postDelayed(
-                            {
-                                // This method will be executed once the timer is over
-                            },
-                            2000 // value in milliseconds
-                        )
+                        usuariosBean.id = response.body()!!
                     }
                 })
 
-
                 usuariosBean.id = id
-                //Cliente Object
-                var cliente = ClientesBean(
-                    0,
-                    fecha_nacimiento,
-                    telefono,
-                    usuariosBean,
-                    domicilio
-                )
+
+
                 //retrofit
                 val retrofit2 = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
@@ -165,11 +156,17 @@ class RegistroCliente : AppCompatActivity() {
                     .build()
 
                 //object to call methods
+                var cliente = ClientesBean(
+                    0,
+                    fecha_nacimiento,
+                    telefono,
+                    usuariosBean,
+                    domicilio
+                )
                 val jsonPlaceHolderApi2 = retrofit2.create(ClienteJsonPlaceHolder::class.java)
                 val call2: Call<Int> = jsonPlaceHolderApi2.clienteAdd(cliente)
                 call2.enqueue(object : Callback<Int> {
                     override fun onFailure(call: Call<Int>, t: Throwable) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                     }
 
                     override fun onResponse(call: Call<Int>, response: Response<Int>) {
